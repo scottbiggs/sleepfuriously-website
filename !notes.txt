@@ -1,0 +1,16 @@
+Descriptions of the file structure:
+
+assets	- Holds all art, sound, or whatever files displayed/shared.  The originals, work versions, and final versions can be found here.
+
+docs		- Documentation relevant to design, drafts, mockups, biz, understanding, and using the website are kept here.
+
+experiments	- This is where all research is done.
+
+old_imac_site	- A copy of the website I made for myself many years ago using my Mac's built-in website designer.
+
+old_structure	- A copy of the most recent version before I cleaned things up and started using version control.
+
+project		- The working area of making the website. This is the area while working on it.  As files are perfected, they are moved to the 'site' directory.
+
+site		- An exact copy of the files and directories that are live on the server. This folder will essentially be the same as the sleepfuriously domain name root.
+

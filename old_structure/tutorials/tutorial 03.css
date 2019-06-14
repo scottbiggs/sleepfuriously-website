@@ -1,0 +1,16 @@
+/* tutorial 3 from http://css.maxdesign.com.au/floatutorial
+*/
+
+/* If we were dealing with anything BESIDES images, a width would need
+  to be specified (images have an inherent width). */
+.floatright {
+	float: right;
+	margin: 0 20px 20px 20px;/* top right, bottom left: TRouBLe is mnemonic */
+	clear: right;			/* Forces each image to move below any previous
+							  floating image. */
+}
+
+/* Turns off the default of 1em at the top of paragraphs. */
+p {
+	margin-top: 0;
+}

@@ -1,0 +1,504 @@
+/*
+ * The Cascading Style Sheet for the Android web pages.
+ *
+ * Organization of this file:
+ * 		HTML Styles
+ * 			- Turns off the damn default settings of various
+ * 			HTML styles and creates the defaults for this
+ * 			website.
+ *
+ * 		Classes
+ * 			- Here I keep the classes all the stuff that
+ * 			make my pages look the way they do.  Anything
+ * 			that's reusable is kept here.
+ *
+ * 		ID's
+ * 			- The unique styles that should only be used once
+ * 			per page are here.  Lots of important stuff in this
+ * 			section.  Eg: "header", "navbar".
+ *
+ *
+ *
+ * This file and all files on this website are Copyright Scott Morgan Biggs 2013.
+ * Please be nice about using this material.
+ *
+ *
+ * 		COLORS used
+ * 		-----------
+ *
+ *	ivory				#fffff0
+ *
+ *	black				#000
+ *
+ *	dark_warm_gray		#504848
+ *	darker_gray			#223
+ *	light gray			#ddd
+ *
+ *
+ *	android green		#95b435		The main color
+ *	bright green		#acb903
+ *	very light green	#ddedb0		For boxes
+ *	dark green			#4d620c
+ *
+ *	very light blue		#d2e1f5
+ *	contrasting blue	#2b517c
+ *	dark blue			#
+ *
+ *	contrasting orange	#bd8c38
+ *
+ *	contrasting purple	#8c2973
+ *
+ *		Text:
+ *	dark blue text		#106		<h1>-<h6>
+ *	cool gray text		#223		<p>
+ */
+
+/*****************************************/
+/*	HTML STYLES
+/*****************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+html {
+	overflow-y: scroll;
+	height: 100%;
+}
+body {
+	font: 100% Helvetica, sans-serif;
+	background-color: white;
+	color: black;
+	font-family: Tahoma,Arial,Helvetica,sans-serif;
+	height: 100%;
+}
+
+ul { list-style: none inside; }
+p {
+	font: 1.3em/1.3em;	/* defines fontsize and lineheight at same time*/
+	margin-bottom: 1.3em;
+}
+h1 { font-size: 350%; }
+h2 { font-size: 250%; }
+h3 { font-size: 200%; }
+h4 { font-size: 175%; }
+h5 { font-size: 140%; }
+h6 { font-size: 120%; }
+
+h1 h2 h3 h4 h5 h6 {
+	font-family: monospace;
+	color: #106;		/* very dark blue */
+	margin-bottom: .9em;
+}
+
+p { color: #223; }		/* slightly cool very dark gray */
+
+a {
+	outline: none;
+	text-decoration: none;
+	}
+a img { border: none; }
+
+/* The order of these is rather important */
+a:link { color: #2b517c }		/* blue */
+a:visited { color: #8c2973; }	/* purple */
+a:hover { color: #95b435; }		/* android green */
+a:active {color: #bd8c38; }		/* orange, when being depressed */
+
+
+
+/****************************************/
+/*	Classes								*/
+/****************************************/
+
+	/* Some basics */
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+	margin: 1em;
+	margin-right: 0.5em;
+}
+
+.clear {
+	clear: both;
+}
+
+/***
+ *	Easy way to make a container stretch to hold an
+ *	entire float.  To use:
+ *		HTML
+ *			<div id="some_container_id" class="clearfix">
+ *			...
+ *			</div>
+ *
+ *			<div class="some_container_class clearfix">
+ *			...
+ *			</div>
+ ***/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+
+
+/***	To organize thoughts	***/
+.box {
+	margin: 5px 4px 10px 4px;
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: #ddedb0;
+	line-height: 1.2;
+}
+.box img {
+	float:right;
+	margin: 5px;
+/*	border: 2px outset #bbb; */
+	border-radius: 5px;
+}
+.box h1 { margin-bottom: 10px; }
+.box h2 { margin-bottom: 9px; }
+.box h3 { margin-bottom: 8px; }
+.box h4 { margin-bottom: 8px; }
+.box h5 { margin-bottom: 8px; }
+.box h6 { margin-bottom: 7px; }
+.box p { line-height: 1.25; }
+
+/***	No color for this box	***/
+.empty_box {
+	margin: 5px 4px 10px 4px;
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
+	line-height: 1.2;
+}
+
+/***	Columns		***/
+.columns {
+	columns: auto 15em;
+	-moz-columns: auto 15em;
+	-webkit-columns: auto 15em;
+}
+
+.indent {
+	margin-left: 1.5em;
+}
+
+
+/***	Emails		***/
+.email_p {
+	margin: 1em 5px 5px 5px;
+	padding: 5px;
+	border: solid 1px black;
+	border-radius: 5px;
+	line-height: 1.7;
+}
+.email_line {
+	font-weight: bold;
+	margin-left: 3em;
+	}
+
+/***	Bug Reports	***/
+.bug {
+	margin: 10px 2px 10px 2px;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
+	background-color: #fed1da;
+	border: 1px solid black;
+}
+.bug .date {
+	text-align: right;
+	color: black;
+}
+.bug .name { margin-left: 10px; }
+.bug .number { float: right; }
+.bug .response {
+	color: #4d620c;
+	padding-left: 2.2em;
+	margin-top: .5em;
+}
+
+/*** Feature Requests	***/
+.feature {
+	margin: 10px 2px 10px 2px;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
+	background-color: #d2e1f5;
+	border: 1px solid black;
+}
+.feature .date {
+	text-align: right;
+	color: black;
+}
+.feature .name { margin-left: 10px; }
+.feature .number { float: right; }
+
+
+/***	Handled (my responses)	***/
+.handled {
+	margin: 10px 2px 10px 2px;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
+	background-color: #ead6ff;
+	border: 1px solid black;
+}
+.handled .date { text-align: right; }
+.handled .name { margin-left: 10px; }
+.handled .number { float: right; }
+.handled .response {
+	color: #4d620c;
+	padding-left: 2.2em;
+	margin-top: .5em;
+}
+.handled .killed {
+	color: #2b517c;
+	padding-left: 2.2em;
+	margin-top: .5em;
+}
+
+/***	Use this for fancy first letters	***/
+.dropcap {
+	float: left;
+	width: .6em;
+	font-size: 1.7em;
+	line-height: 83%;
+	padding-right: 0;
+}
+
+/***	Code	***/
+.code_font {
+	font-family: monospace;
+}
+
+/****************************************/
+/*	IDs									*/
+/****************************************/
+
+/*** Container
+ * Defines the entire display area.  Everything on this page is displayed
+ * within "container.
+ */
+#container {
+	width: 92%;			/* Fill 90% of the width of the viewport. */
+	background-color: #fff;
+	color: #223;
+
+	min-height: 100%;
+	position: relative;
+
+	margin: 0 auto -3em;	/* top, left/right, bottom - needs to match (negatively) the height in the footer */
+
+}
+
+/*** header	***/
+#header {
+	min-height: 160px;
+	font-family: monospace;
+	color: #106;
+	border-bottom: 1px solid #222;
+	text-align: right;
+}
+#header img {
+	float: left;
+}
+
+
+/***	navbar	***/
+#navbar {
+	width: 85%;		/* width + padding-left = 100% */
+	padding: 0;
+	padding-left: 15%;
+	float: left;
+	margin: 0 0 3em 0;
+	list-style: none;
+	background-color: #e0e0e0;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-radius: 5px;
+}
+#navbar li { float: left; }
+#navbar #selected { background-color: white; }
+#navbar #selected a:hover {
+	color: #4d620c;
+	background-color: #fff;
+}
+#navbar li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #4d620c;		/* android dark green */
+	border-right: 1px solid #ccc;
+}
+#navbar li a:hover {
+	color: #7aa004;		/* android bright green */
+	background-color: #f2f2f2;
+}
+#navbar .disabled { text-decoration: line-through; }
+#navbar .disabled a:hover {
+	background-color: #e0e0e0;
+	color: #4d620c;
+}
+
+/***	plain_main	***/
+#plain_main {
+	margin-top: .5em;
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
+	padding: 1.3em;
+	height: 100%;
+	overflow: auto;		/* makes this container expand to include any
+						   child elements */
+}
+
+/***	fancy_main	***/
+#fancy_main {
+	border: 1px solid black;
+	border-radius: 5px;
+	margin-top: .5em;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding: 1.3em;
+	background-color: #d2e1f5;
+	height: 100%;
+	overflow: auto;		/* makes this container expand to include any
+						   child elements */
+}
+#fancy_main h2 {
+	line-height: 1.8em;
+	margin-bottom: .9em;
+}
+#fancy_main h5 { margin: 1em 2em 1em 2em; }
+#fancy_main p {
+	margin-bottom: 1em;
+}
+#fancy_main ul {
+	margin: 0 0 1.5em 2.5em;
+	list-style-type: disc;
+	list-style-position: outside;
+	font-size: 110%;
+}
+#fancy_main ul li {
+	margin: 0 0 .5em 0;
+}
+#fancy_main .box {
+	background-color: #ddd;
+}
+
+/***	This should be included for any layout that's just above the footer.	***/
+.footer_beneath {
+	margin-bottom: 4em;	/* to account for the footer */
+}
+
+/***	single_column	***/
+#single_column {
+	float: left;
+	width: 60%;		/* This makes the width consistent over zooms. */
+	padding-top: 1em;	/* Give a little space for readability. */
+	padding-left: .7em;
+	padding-right: .7em;
+	margin-left: 20%;
+	margin-bottom: 4em;	/* to account for the footer */
+}
+
+
+
+/***	left_column	***/
+#left_column {
+	float: left;
+	width: 30%;		/* This makes the width consistent over zooms. */
+	padding-top: 1em;	/* Give a little space for readability. */
+	padding-left: .7em;
+	padding-right: .7em;
+	margin-bottom: 4em;	/* to account for the footer */
+}
+
+/***	center_column	***/
+#center_column {
+	float: left;
+	width: 30%;		/* This makes the width consistent over zooms. */
+	padding-top: 1em;	/* Give a little space for readability. */
+	padding-left: .7em;
+	padding-right: .7em;
+	margin-bottom: 4em;	/* to account for the footer */
+}
+
+/***	right_column	***/
+#right_column {
+	float: right;
+	width: 30%;		/* This makes the width consistent over zooms. */
+	padding-top: 1em;	/* Give a little space for readability. */
+	padding-left: .7em;
+	padding-right: .7em;
+	margin-bottom: 4em;	/* to account for the footer */
+}
+#right_column .box {
+	background-color: #ffffbc;
+}
+
+
+/***	footer	***/
+#footer {
+	padding-top: .6em;
+	border-top: 1px solid black;
+	text-align: center;
+	font-size: 90%;
+	line-height: 120%;
+	font-family: Arial, Helvetica, sans-serif;
+	clear: both;
+
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3em;	/* needs to match the negative height in the container */
+}

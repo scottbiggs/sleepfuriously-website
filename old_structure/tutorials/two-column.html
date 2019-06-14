@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- Just an example of using CSS to make a two-column web page
+	with a header and a footer.
+
+	Uses DIVs instead of tables, woohoo!
+	-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Two Column</title>
+
+	<link href="two-column.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	Outside of DIVs
+	<!-- This area takes up the entire screen (which is centered) and is used
+		to make sure that there's a base for all the other DIVs. -->
+	<div id="wrapper" align="center">
+		Inside "wrapper"
+
+		<div id="wrapper_inner">
+			Inside "wrapper_inner"
+			<div id="header_container">header_container</div>
+			<div id="body_container">body_container
+				<div id="left_column">left column</div>
+				<div id="right_column">right column</div>
+			</div>
+			<div id="footer_container">footer_container</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

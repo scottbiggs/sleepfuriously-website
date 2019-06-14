@@ -1,0 +1,42 @@
+/* tutorial 5 from http://css.maxdesign.com.au/floatutorial
+*/
+
+/* the "navigation" id of unsigned lists */
+ul#navigation {
+	list-style-type: none;	/* Removes the bullets from the list */
+	margin: 0;				/* Remove the default margins for lists */
+	padding: 0;				/* Remove default padding for lists */
+	border-top: 1px solid #066;	/* puts a line above this section */
+	padding: .5em 0;		/* Two params: top/bottom and left/right */
+}
+
+ul#navigation li a {
+	display: block;		/* Convert anchors in listelements within the
+						  "navigation" id to blocks.  This is the first
+						  step in creating roll-over effects. */
+	width: 5em;			/* IE prefers needs the width defined here */
+	color: #fff;
+	background-color: #036;
+	padding: .2em 0;	/* top/bottom, left/right padding for anchors.
+							This increases the block size. */
+	text-align: center;
+	text-decoration: none;	/* turns off the normal link underline */
+}
+
+/* Defines the hover characteristics for the navigation list anchor. */
+ul#navigation li a:hover {
+	color: #fff;
+	background-color: #69c;
+}
+
+/* Tells how to move the "left" class of navigation id (of an ul). */
+ul#navigation .left {
+	float: left;
+/*	width: 5em;			width was moved to ul#navigation li a  */
+}
+
+/* similar for "right" */
+ul#navigation .right {
+	float: right;
+/*	width: 5em;			width was moved to ul#navigation li a  */
+}

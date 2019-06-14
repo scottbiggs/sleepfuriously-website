@@ -1,0 +1,95 @@
+/**
+ *	CSS file for the nethack web pages.  It's pretty much
+ *	just like looking at my nethack game.
+ *
+ *	NOTE:
+ *		This CSS file assumes that about3.css has been
+ *		included in the html file!!!
+ */
+
+
+/*************************************
+ *	Header
+ */
+
+#header {
+	display: block;
+	width: 80%;
+	margin: 0 auto 1.5em auto;
+	font-family: Consolas, monaco, monospace;
+}
+
+
+#header #title {
+	margin-bottom: .3em;
+}
+
+#header h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+}
+
+#header #subtext {
+	width: 40%;
+	margin: 0 0 0 65%;
+	text-align: left;
+}
+
+/*************************************
+ *	Some basics
+ */
+li {
+	margin-left: 3em;
+	font-size: 105%;
+}
+.box li p {
+	font-size: 100%;
+	margin-bottom: 1em;
+}
+
+/*************************************
+ *	Some decorations
+ */
+
+/** For weird or off things **/
+.weird {
+	font-weight: bold;
+	color: #e8ca47;
+}
+
+/** For an insane idea **/
+.nuts {
+	font-weight: bolder;
+	font-style: italic;
+	color: #ff8030;
+}
+
+.super_nuts {
+	font-weight: bolder;
+	font-style: italic;
+	color: #d05010;
+}
+
+.standout {
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 115%;
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+
+/*************************************
+ *	Some special stuff
+ */
+
+/** The tag line, just below the navbar **/
+#tag_line {
+	font-size: 110%;
+	color: #eee0e0;
+	text-align: center;
+	margin-bottom: 2em;
+}

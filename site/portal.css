@@ -1,0 +1,53 @@
+
+/*** This makes the picture take up everything but the bottom 10% of
+ * page, which i'll leave for the footer.
+ */
+html {
+/*
+	background: url(crossroads.jpg) no-repeat fixed;
+ 	-webkit-background-size: 100% 90%;
+	-moz-background-size: 100% 90%;
+	-o-background-size: 100% 90%;
+	background-size: 100% 90%;
+*/
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+
+/* Take up the bottom of the page (just below the image). */
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 80%;
+	height: 10%;
+	padding: 0 10% 0 10%;
+	border-top: 2px solid black;
+	text-align: center;
+	font-family: "Trebuchet MS", tahoma,helvetica,arial,verdana,sans-serif;
+}
+
+#footer p {
+	margin: 0;
+	padding: 0;
+}
+
+#footer hr {
+	margin: 4px 0 8px 0;
+	padding: 0;
+}
+
+.well_said {
+	font-size: 130%;
+	padding: 6px 0 4px 0;
+}
+
+.very_small {
+	font-size: 65%;
+}

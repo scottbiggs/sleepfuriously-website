@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--==========================================-->
+<head>
+	<meta name="index" content="base web page for the film production company, Sleep Furiously" />
+	<title>Sleep Furiously</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Scott Morgan Biggs" />
+	<meta name="Copyright" content="Copyright (c) 2015" />
+	<meta name="description" content="base web page for the film production company, Sleep Furiously"/>
+	<link rel="shortcut icon" href="images/sfs_favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="sfs.css" />
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!--	javascript															-->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<script type="text/javascript">
+
+		//----------------------------------
+		//	Globals
+		//----------------------------------
+
+		// The size of the original crossroads image and map.
+		CROSSROADS_ORIG_WIDTH = 800;
+		CROSSROADS_ORIG_HEIGHT = 600;
+
+
+		//----------------------------------
+		//	Helper Functions
+		//----------------------------------
+
+		//----------------------------------
+		// Gets the width of the full viewport (assuming there are
+		// no scrollbars.  Should work for all modern browsers
+		//
+		function get_viewport_width() {
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				width = w.innerWidth || e.clientWidth || g.clientWidth;
+			return width;
+		} // get_viewport_width()
+
+		//----------------------------------
+		// Gets height of the viewport.
+		//
+		function get_viewport_height() {
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				height = w.innerHeight || e.clientHeight|| g.clientHeight;
+			return height;
+		} // get_viewport_height()
+
+
+		//----------------------------
+		//	Sets the width and height of the given image
+		//	to the full size of the viewport.
+		//
+		//	img		The image to modify.
+		//
+		function set_img_full_screen (img) {
+			if (img && img.style) {
+				var height = get_viewport_height() * 0.9;	// Leave 10% for the bottom text.
+				img.style.height = "" + height + "px";
+
+				var width = get_viewport_width();
+				img.style.width = "" + width + "px";
+			}
+			else {
+				alert ("problem with the image!");
+			}
+		} // set_img_full_screen (img)
+
+
+		//----------------------------
+		//	Given a map, this changes its coords to fit a full-
+		//	screen orientation.
+		//
+		//	preconditions:
+		//		CROSSROADS_ORIG_WIDTH & CROSSROADS_ORIG_HEIGHT
+		//			are properly set.
+		//
+		function set_map_full_screen () {
+			var i, j;
+			var width = get_viewport_width();
+			var height = get_viewport_height() * 0.9;	// Leave room for the bottom
+
+			var width_ratio = width / CROSSROADS_ORIG_WIDTH;
+			var height_ratio = height / CROSSROADS_ORIG_HEIGHT;
+
+/*
+			// Get the working map
+			var map = document.getElementById ("crossroads_map");
+			if (map == null) {
+				alert ("Can't find the map!!!");
+				return;
+			}
+*/
+			// Grab all the areas and put 'em into an array.
+			var map_areas = map.getElementsByTagName('area');
+
+			// Make an array of an array of numbers.  These numbers
+			// are taken from the 'areas' of the map.
+			var coords = new Array();
+			for (i = 0; i < map_areas.length; i++) {
+				// map_areas[i].coords is a string.  Split
+				// each string into an array of integers.
+				coords[i] = map_areas[i].coords.split(',');
+			}
+
+			// Get the original map.  These numbers are used to
+			// begin our calculations.
+			var orig_map = document.getElementById ("crossroads_map_orig");
+			if (orig_map == null) {
+				alert ("Can't find the original map!!!");
+				return;
+			}
+			var orig_map_areas = orig_map.getElementsByTagName('area');
+			var orig_coords = new Array();
+			for (i = 0; i < orig_map_areas.length; i++) {
+				orig_coords[i] = orig_map_areas[i].coords.split(',');
+			}
+
+			// Now do the changes.  The first number in
+			// a coords[i] array is the x, the next is
+			// its coorsponding y coordinate.  So go through
+			// each two at a time, modifying as necessary.
+			for (i = 0; i < map_areas.length; i++) {
+				for (j = 0; j < coords[i].length; j += 2) {
+					coords[i][j] = orig_coords[i][j] * width_ratio;
+					coords[i][j + 1] = orig_coords[i][j + 1] * height_ratio;
+				}
+			}
+
+			// Save the changes.
+			for (i = 0; i < map_areas.length; i++) {
+				map_areas[i].coords = coords[i];
+			}
+
+		} // set_map_full_screen (map)
+
+
+		//----------------------------
+		//	Overload the onload() function.  This is
+		//	called when the window has finished loading.
+		//
+		//	side effects:
+		//		ORIG_COORDS will be set.
+		//
+		window.onload = function () {
+			window.onresize();
+
+		} // window.onload()
+
+
+		//----------------------------
+		//	This is called whenever the window is resized, which
+		//	is the same thing I do for when it's loaded.
+		//
+		window.onresize = function() {
+			var image = document.getElementById ("body1_img");
+			if (image == null) {
+				alert("Can't find the image!!!");
+				return;
+			}
+			set_img_full_screen(image);
+
+			set_map_full_screen();
+		}
+
+	</script>
+
+</head>
+
+
+<!--==========================================-->
+<body>
+
+	<div id="body1">		<!-- This is the blackboard -->
+		<img id="body1_img"
+			src="images/info_screen.png"
+			alt="blackboard" />
+		<h2>Under Construction...</h2>
+
+	</div>
+</body>
+</html>

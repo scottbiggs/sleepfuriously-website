@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<content collectionGUID="0EB8219A-3839-45B0-98C7-5EE285CE6A09">
+  <lastEdited clientType="local-build-20111014" date="2011-10-14 17:16:13 -0500"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Countdown Timer&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Was showing friends my stopwatch app at a party last night, and one guy thought it was a countdown timer for the &#x201C;rapture&#x201D; yesterday.  Cute.  Fortunately no one at that particular party flew up into the air, so we all had a good time.  A *very* good time!&#xD;&#xD;So I&#x2019;m gonna make a count-down timer app.  Why not?  The stopwatch worked rather nicely, and this is essentially just going in reverse.  It&#x2019;s all about the user interface now.&#xD;&#xD;So as soon as I get the stopwatch on the marketplace, look out for the countdown timer.&#xD;&#xD;Oh yeah, if any of you have UI ideas or a nice drawing for an icon, give me a buzz.</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Sunday, May 22, 2011&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Counting down...</richText>
+  </textBox>
+</content>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<content collectionGUID="0EB8219A-3839-45B0-98C7-5EE285CE6A09">
+  <lastEdited clientType="local-build-20111205" date="2011-12-05 18:05:17 -0600"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Trippy Tic Tac Toe!&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Yep, here&#x2019;s a new one.  And it&#x2019;s in 3D--just like your face!  While I&#x2019;ve written two 3D graphics engines myself and extensively used two others, I&#x2019;ve never really played with OpenGL (the open-source 3D graphics system used by everyone from John Carmack of Quake fame to every open-source game-geek alive).  So I&#x2019;m filling that hole while doing a neat little Android app at the same time.&#xD;&#xD;Specifically, this uses OpenGL ES, the version made especially for mobile devices like Android and iPhones.  To be honest, OpenGL ES is really not mature yet--lots and lots of really useful things are missing.  And some important things are nearly impossible to do (like certain error condition tests!).  But you can definitely do a lot.&#xD;&#xD;To get this thing out and working quickly, I didn&#x2019;t bother with a true light source, but it&#x2019;s fun enough and works.  The hard part was making the shapes myself.  I used graph paper, pencils, and a lot of erasers (my floor is covered with tiny eraser bits--kind of funny to walk on).  Check it out.&#xD;&#xD;&lt;a href="trippy_tictactoe.apk"&gt;trippy_tictactoe.apk&lt;/a&gt;</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Sunday, December 4, 2011&lt;/b&gt;</richText>
+  </textBox>
+  <image id="generic-movie-attribute" dynamic="no" visible="yes" src="4_Trippy_Tic_Tac_Toe_files/icon.png" left="0px" top="0px" width="246.8105px" height="316px"/>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Trippy Tic Tac Toe</richText>
+  </textBox>
+</content>

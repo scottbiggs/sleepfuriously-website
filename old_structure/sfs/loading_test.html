@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+	This seems to work ok.  A scrolling animation is displayed until
+	onLoad() is called.  I added a delay before the animation is made
+	invisible so that the user doesn't see the initial animation (which
+	probably won't be used in the final version).
+-->
+<head>
+	<title>Testing ways to make the view delay until loading is complete. Should work even if javascript is disabled.</title>
+	<link rel="stylesheet" type="text/css" href="sfs.css" />
+
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!--	javascript															-->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<!-- Holds the scrolling code -->
+	<script src="sfs.js"></script>
+
+	<script type="text/javascript">
+
+		//----------------------------------
+		//	Globals & Constants
+		//----------------------------------
+
+		// The size of the screen images.
+		SCREEN_IMAGE_WIDTH = 600;
+		SCREEN_IMAGE_HEIGHT = 400;
+
+
+		// Variables that tell us which screen we are on.
+		var current_screen = 5;		// start with image #2 (starting with 1)
+
+
+		//----------------------------------
+		//	Helper Functions
+		//----------------------------------
+
+		//----------------------------------
+		// Gets the width of the full viewport (assuming there are
+		// no scrollbars.  Should work for all modern browsers
+		//
+		function get_viewport_width() {
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				width = w.innerWidth || e.clientWidth || g.clientWidth;
+			return width;
+		} // get_viewport_width()
+
+		//----------------------------------
+		// Gets height of the viewport.
+		//
+		function get_viewport_height() {
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				height = w.innerHeight || e.clientHeight|| g.clientHeight;
+			return height;
+		} // get_viewport_height()
+
+
+		//----------------------------
+		//	Sets the width and height of the given image
+		//	to the full size of the viewport.
+		//
+		//	img		The image to modify.
+		//
+		function set_img_full_screen (img) {
+			if (img && img.style) {
+//				var height = get_viewport_height() * 0.9;	// Leave 10% for the bottom text.
+				var height = get_viewport_height();
+				img.style.height = "" + height + "px";
+
+				var width = get_viewport_width();
+				img.style.width = "" + width + "px";
+			}
+			else {
+				alert ("problem with the image!");
+			}
+		} // set_img_full_screen (img)
+
+
+		//----------------------------
+		//	Scrolls the current view to center on the specified
+		//	screen.  Note that screens start on 1 (for now).
+		//
+		function scroll_to_screen (screen_num) {
+//			alert ("scroll_to_screen: " + screen_num);
+			switch (screen_num) {
+				case 1:
+//					window.scrollTo(0,0);
+					ease_scroll_to ('pic1', 750, 2);
+					break;
+
+				case 2:
+//					window.scrollTo(get_viewport_width(), 0);
+					ease_scroll_to ('pic2', 750, 2);
+					break;
+
+				case 3:
+//					window.scrollTo(get_viewport_width() * 2, 0);
+					ease_scroll_to ('pic3', 750, 2);
+					break;
+
+				case 4:
+//					window.scrollTo(0, get_viewport_height());
+					ease_scroll_to ('pic4', 750, 2);
+					break;
+
+				case 5:
+//					window.scrollTo(get_viewport_width(), get_viewport_height());
+					ease_scroll_to ('pic5', 750, 2);
+					break;
+
+				case 6:
+//					window.scrollTo(get_viewport_width() * 2, get_viewport_height());
+					ease_scroll_to ('pic6', 750, 2);
+					break;
+
+				default:
+					alert ("Illegal number in scroll_to_screen!");
+					break;
+			}
+		}
+
+
+		//----------------------------
+		//	Overload the onload() function.  This is
+		//	called when the window has finished loading.
+		//
+		//	side effects:
+		//		ORIG_COORDS will be set.
+		//
+		window.onload = function () {
+			window.onresize();
+
+			setTimeout (function() {
+					document.getElementById("loading").style.display = "none";
+				}, 750);	// Wait until the animation has finished.
+			} // window.onload()
+
+
+		//----------------------------
+		//	This is called whenever the window is resized, which
+		//	is the same thing I do for when it's loaded.
+		//
+		window.onresize = function() {
+//			alert ("window.onresize()");
+
+			var image = document.getElementById ("pic1");
+			if (image == null) {
+				alert("Can't find the image!!!");
+				return;
+			}
+			set_img_full_screen(image);
+
+			image = document.getElementById("pic2");
+			set_img_full_screen(image);
+
+			image = document.getElementById("pic3");
+			set_img_full_screen(image);
+
+			image = document.getElementById("pic4");
+			set_img_full_screen(image);
+
+			image = document.getElementById("pic5");
+			set_img_full_screen(image);
+
+			image = document.getElementById("pic6");
+			set_img_full_screen(image);
+
+			scroll_to_screen (current_screen);
+		}
+
+	</script>
+
+
+</head>
+
+
+<!--==========================================-->
+<body>
+	<div id="loading">
+		<img id="loading_image" src="images/loading.gif" alt="Loading..." />
+	</div>
+
+	<table id="main_table" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><img onclick='scroll_to_screen(2);' id="pic1" src="images/one.png" height="400" width="600"/></td>
+			<td><img onclick='scroll_to_screen(3);' id="pic2" src="images/two.png" height="400" width="600"/></td>
+			<td><img onclick='scroll_to_screen(4);' id="pic3" src="images/three.png" height="400" width="600"/></td>
+		</tr>
+		<tr>
+			<td><img onclick='scroll_to_screen(5);' id="pic4" src="images/four.png" height="400" width="600"/></td>
+			<td><img onclick='scroll_to_screen(6);' id="pic5" src="images/five.png" height="400" width="600"/></td>
+			<td><img onclick='scroll_to_screen(1);' id="pic6" src="images/six.png" height="400" width="600"/></td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

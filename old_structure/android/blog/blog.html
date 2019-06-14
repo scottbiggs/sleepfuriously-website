@@ -1,0 +1,210 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<!--==========================================-->
+	<head>
+		<meta name="index" content="blog web page for Scott Morgan Biggs' android applications"/>
+		<title>Sleep Furiously</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Scott Morgan Biggs" />
+		<meta name="Copyright" content="Copyright (c) 2013" />
+		<meta name="description" content="blog web page for Scott Morgan Biggs' android applications"/>
+		<link rel="shortcut icon" href="../images/sfs_favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="../android.css" />
+		<!-- This section inhibits GoDaddy's Banner -->
+		<style type="">
+			#conash3D0 { display:none; }
+		</style>
+	</head>
+
+
+<!--==========================================-->
+<body>
+
+	<div id="container">
+
+		<div id="header">
+				<img id="header_image" src="../images/android_evolution.jpg" alt="android versions"/>
+				<h1>Biggs' Apps</h1>
+				<h3>for Android devices</h3>
+		</div>
+
+		<ul id="navbar">
+			<li><a href="../android.html">android home</a></li>
+			<li><a href="../apps/apps.html">apps</a></li>
+			<li><a href="../hpg_alpha_test/hpg_alpha_test.html">testing</a></li>
+			<li id="selected"><a>rants</a></li>
+			<li><a href="../../about_smb/about.html">about biggs</a></li>
+			<li><a href="../../index.html">crossroads</a></li>
+		</ul>
+
+
+		<div class="clear"></div>
+
+		<div id="fancy_main" class="footer_beneath">
+			<h3>da Blog</h3>
+			<p>blah blah blah blah blah blah. Yeah, you heard me right!</p>
+			<br/>
+			<div class="box">
+				<h4>Welcome</h4>
+					I can't imagine why you're here, wasting your time reading this.
+					But since you are, please be welcome. Have a seat, take a load off, pour yourself a drink.
+					You might as well be comfortable.
+				<br/>
+				</p>
+			</div>
+
+			<div class="box">
+				<h4>Orientations Changes!</h4>
+				<p class="columns">
+					Sigh. I remember when I was first learning to program on Android devices. Like everyone,
+					I was stunned to find out that during an orientation change, my entire Activity would be
+					destroyed and then have to redraw itself. WTF? The good programmer deep inside was screaming
+					his bloody head off: what kind of <strong>completely</strong> inefficient crap was this?
+					After all that time and work to go through all those steps to finally get that Activity looking
+					just right, I now have to destroy it all and start again from the beginning?  Aaaaaghh!
+					<br/>
+					<br/>
+					But after a while, letting the thoughts go through my head, I kind of figured that there
+					wasn't really a better solution. And I learned to live with it.
+					<br/>
+					<br/>
+					But I found bugs popping up during orientation changes, and I did some more testing and
+					saw some <em>strange</em> results from my logcat messages. It looked like onCreate()
+					was being called more than once in some cases of an orientation change.
+					<br/>
+					<br/>
+					We all know the Activity Life-cycle, so when there's an orientation change we
+					expect the Activity to go away in this order: onPause(), onStop(), and then onDestroy().
+					<br/>
+					<br/>
+					And then, when the Activity is done all over again for the new orientation, we expect
+					to see the usual calls of onCreate(), onStart(), and onResume(). But that's not what
+					was happening. Do it yourself, write some Log.i(...) statements in these and do an
+					orientation change. I'll wait.
+					<br/>
+					<br/>
+					Yup, isn't that weird? Those startup messages are called <strong>TWICE</strong>! <em>But
+					not always!</em>
+					<br/>
+					<br/>
+					Apparently there is more than one thing happening: an orientation change AND a keyboard
+					flipping in/out can cause all this ruckus. Thus the multiple restarts and various other
+					confusions.
+					<br/>
+					<br/>
+					I have lots to say about this, but for now I'll just say, <em><strong>blecchh</strong></em>!
+					<br/>
+					<br/>
+					That alone is bad enough. But when you add the complexity of an ASyncTask to the loading of
+					an Activity, you've turned a simple build-a-screen class into a giant mess.
+					<br/>
+					<br/>
+					So that's the end of today's rant. This is a mess of steaming crap--a hack upon hack upon
+					hack that's so hard to maintain that I <em>wish</em> that Google had done a crappy hack
+					instead of this stupid orientation/ASyncTask stuff. A hack would have been SOOO much easier
+					to deal with! Damn!
+				</p>
+				<br/>
+			</div> <!-- class box -->
+
+
+			<div class="box">
+				<h4>ASyncTasks</h4>
+				<p class="columns">
+				Ok, the last blog was about the horrible implementation of orientation changes
+				in Android. The fix that Google suggests is to use asynchronous tasks, but
+				these bring their own sets of issues.
+				<br/>
+				<br/>
+				Whenever an Activity needs to do something that takes a bit of time, developers
+				need to spin that into a separate thread so that the UI thread doesn't get
+				clogged up (resulting in a less-than-snappy interface at best, an "Application
+				Not Responding (ANR) crash at worse).
+				<br/>
+				<br/>
+				Since so many useful things can take a while (web access, database access,
+				file access, even complicated user interfaces), the good people at Google thought they'd
+				provide a built-in way to handle this: ASyncTasks.
+				It's not an easy thing to master, but I've been doing them so often that  ASyncTasks
+				feel like old classmates.
+				<br/>
+				<br/>
+				Aside from their complexity, there are still two problems with ASyncTasks:
+				<br/>
+				<strong class="indent">Memory Leaks</strong>
+				<br/>
+				<strong class="indent">Non Permanence</strong>
+				<br/>
+				<br/>
+				Memory Leaks: Let's say you start up your Activity and need to load up some info from
+				the web. Great, throw up a <a href="http://developer.android.com/design/building-blocks/progress.html">waiting spinner</a>,
+				set your ASyncTask to go to the web and fetch your data.
+				<br/>
+				<br/>
+				But...before you're done loading the data, the user interrupts you (orientation
+				change, pops out a keyboard, gets a phone call, etc.). What happens?
+				<br/>
+				<br/>
+				Well, your Activity is killed, and a new one is started. This new Activity begins
+				the process all over again, creating a new ASyncTask to grab that needed info from
+				the web.
+				<br/>
+				<br/>
+				But what happened to that old ASyncTask? It wasn't really connected to the old
+				Activity, so it wasn't killed when the old Activity died. And when it's done,
+				it'll hit its <span class="code_font">onPostExecute()</span> and try to access
+				your <em>old Activity</em>! Yeah, the one that's now in the garbage collector.
+				CRASH!
+				<br/>
+				<br/>
+				Try it yourself: just rotate quickly several times. It's pretty easy to make
+				that beautiful program crash like you're back in junior high.
+				<br/>
+				<br/>
+				I'd love to say that I've figured everything out, but Ryan has an excellent
+				article detailing the issues <a href="http://www.fattybeagle.com/2011/02/14/android-asynctasks-during-a-screen-rotation-part-i/">
+				here</a>.
+				<br/>
+				<br/>
+				Non Permanence: That (now static) ASynchronousTask you have now implemented
+				can only be used <strong>once</strong>! Yup, try calling
+				<span class="code_font">myASyncTaskInstance.execute()</span> a second time
+				and...whoa, CRASH!
+				<br/>
+				<br/>
+				Not quite sure why this happens, but it does. To me, this severely limits
+				the usability of ASyncTasks as I can't reload my data using this same pattern.
+				Really!
+				<br/>
+				<br/>
+				So what's a guy to do? Avoid all this junk completely and do it the <em>real</em>
+				Android way: <strong>Services</strong>. I'll go into this in more detail when
+				I have time, but here's a hint: IntentService coupled with Parcelable/Serializable
+				is a truly useful thing.
+				</p>
+			</div> <!-- class box -->
+
+
+		</div> <!-- main -->
+
+		<br/> <!-- This needs to be here for the footer to be separate -->
+
+		<div id="footer">
+			<p>
+				"Android Evolution" created by Manu
+				Cornet, <a href="http://www.bonkersworld.net">http://www.bonkersworld.net</a>.  All else is copyright 2013 by Scott M. Biggs and Sleep Furiously Productions.
+				Not that that means much these days.
+			</p>
+		</div>
+
+
+
+	</div>
+
+
+
+
+</body>
+</html>

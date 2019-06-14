@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<content collectionGUID="0EB8219A-3839-45B0-98C7-5EE285CE6A09">
+  <lastEdited clientType="local-build-20111014" date="2011-10-14 18:31:06 -0500"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Biggs&#x2019; Timecode Calculator&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Okay, after what I thought was going to be a no-brainer quickie app, I&#x2019;m finally ready to announce a calculator for people who deal with timecodes (primarily editors, directors, sound designers, etc.).  Whew, not only was the basic algorithm a &lt;b&gt;major hurdle&lt;/b&gt;, but because I thought this was going to be easy I coded fast and loose.  Now there&#x2019;s the payback of bunches of bugs.&#xD;&#xD;So, I&#x2019;m releasing a Beta version (v. 0.9).  I expect bugs here; so should you.  And tell me about &#x2018;em.  They *will* be fixed.  And then there&#x2019;ll be the real release, a nice clean version (1.0, yay!).&#xD;&#xD;And yeah, like my other little apps, this will be a no-cost add-free app for the Android.  So ask for it on you Android Market.&#xD;&#xD;App Features:&#xD;	*	Add, Subtract, Multiply, and Divide SMPTE timecodes.&#xD;	*	Set any frame rate from 3 to 99 frames per second.&#xD;	*	Correctly and intuitively works with Drop Frame timecodes, used extensively in NTSC environments.&#xD;	*	Works nicely with built-in keyboards.&#xD;	*	Optionally implements sound and haptic (vibrations) feedback.&#xD;	*	Saves your preferences.</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Friday, October 14, 2011&lt;/b&gt;</richText>
+  </textBox>
+  <image id="generic-movie-attribute" dynamic="no" visible="yes" src="14_Introducing_a_new_calculator_for_SMPTE_files/icon%20%28120x120%29%2002.png" left="0px" top="0px" width="185px" height="185px"/>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Introducing a new calculator for SMPTE</richText>
+  </textBox>
+</content>

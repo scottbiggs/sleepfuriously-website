@@ -1,0 +1,30 @@
+/* tutorial 2 from http://css.maxdesign.com.au/floatutorial
+*/
+
+/* The borders are different widths to create a 3D effect. */
+.floatright {
+	float: right;
+	width: 154px;
+	margin: 0 0 15px 15px;
+	background-color: #ddd;
+	padding: 10px;
+	border-top: 1px solid #999;
+	border-right: 3px solid #555;
+	border-bottom: 3px solid #555;
+	border-left: 1px solid #999;
+}
+
+/* This creates a subclass of the floatright that is only used for images. */
+/*div.floatright img { */
+.floatright img {
+	border-top: 3px solid #555;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	border-left: 3px solid #555;
+}
+
+/* Make the top of paragraphs align perfectly.  This removes the 1em default
+  top margin for paragraphs. */
+p {
+	margin-top: 0;
+}

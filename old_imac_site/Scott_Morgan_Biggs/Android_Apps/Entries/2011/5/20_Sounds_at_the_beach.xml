@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<content collectionGUID="0EB8219A-3839-45B0-98C7-5EE285CE6A09">
+  <lastEdited clientType="local-build-20111014" date="2011-10-14 17:16:13 -0500"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;biggs&#x2019; stopwatch&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Okay, just got this thing working very nicely on my Motorola Backflip (OS 2.1--yep, I upgraded from 1.5; well worth it).&#xD;&#xD;This little thingy was &lt;i&gt;fun&lt;/i&gt;!  Took me only eight hours to make it work flawlessly.  I spent another day adding a few minor features (like the option to have sound or vibrations) and testing.&#xD;&#xD;Oh yeah, it should work well into the 22nd century, counting the seconds all the way.  And yeah, it uses NO processor time when running in the background!  Isn&#x2019;t that neat?&#xD;&#xD;It&#x2019;s available NOW on the marketplace.  Want to skip the marketplace? then download the apk directly by right-clicking on the icon above and choose &#x201C;save-link-as&#x201D;.&#xD;&#xD;Be the first on your block to have this nice and simple app that...keeps track of elapsed time!  Weeeee!</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Friday, May 20, 2011&lt;/b&gt;</richText>
+  </textBox>
+  <image id="generic-movie-attribute" dynamic="no" visible="yes" src="20_Sounds_at_the_beach_files/icon.png" left="0px" top="0px" width="159px" height="159px"/>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Just a stopwatch--nothing more.</richText>
+  </textBox>
+</content>

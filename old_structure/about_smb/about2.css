@@ -1,0 +1,43 @@
+/**
+ *	This CSS file is for special items that pertain
+ *	ONLY to the about_smb index.html page.  Should be
+ *	pretty sparse.
+ */
+
+
+/** This DIV holds my picture et al **/
+#header #self_pic {
+	margin: 0 auto;
+	padding: 0;
+	width: 580px;	/* width of the image */
+	font-size: 90%;
+}
+
+#header #self_pic img {
+	/* Only works on Chrome and Safari */
+	-webkit-box-reflect: below 1px
+		-webkit-gradient(linear, center top, center bottom,
+						 color-stop(75%, transparent),
+						 from(transparent),
+						 to(rgba(0,0,0,.4)));
+}
+
+
+/** This is JUST for my name **/
+/*
+#header #name {
+	width: 5em;
+	margin: 0 auto;
+	text-align: left;
+	position: absolute;
+	left: 340px;
+}
+*/
+#header #name {
+	position: absolute;
+	width: 5em;
+	top: .5em;
+	left: 50%;
+	z-index: 10;
+	margin-left: 295px;
+}

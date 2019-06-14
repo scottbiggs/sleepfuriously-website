@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:iweb="http://www.apple.com/iweb" version="2.0">
+  <channel>
+    <title>Apps</title>
+    <link>http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Android_Apps.html</link>
+    <description>For several months, I have been teaching myself the fascinating world of Google’s Android operating system.  I have written dozens of little apps--mostly tutorials on the various aspects of this tiny portable computer.&lt;br/&gt;&lt;br/&gt;My philosophy is to write little apps that do one thing well.  Make it tight, make it cute, and make it work.  Then let anyone use it.&lt;br/&gt;&lt;br/&gt;Bigger programs (like the workout app), well that’s another story.</description>
+    <generator>iWeb 3.0.3</generator>
+    <image>
+      <url>http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Android_Apps_files/android.jpg</url>
+      <title>Apps</title>
+      <link>http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Android_Apps.html</link>
+    </image>
+    <item>
+      <title>OMG!  Not another little app!</title>
+      <link>http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2012/2/17_OMG%21_Not_another_little_app%21.html</link>
+      <guid isPermaLink="false">952db578-b09f-4446-89d3-02ecb7e55905</guid>
+      <pubDate>Fri, 17 Feb 2012 16:56:29 -0600</pubDate>
+      <description>&lt;a href=&quot;http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2012/2/17_OMG%21_Not_another_little_app%21_files/icon%20512x512%20%28higher%20compression%29_1.png&quot;&gt;&lt;img src=&quot;http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Media/object001_2.png&quot; style=&quot;float:left; padding-right:10px; padding-bottom:10px; width:157px; height:155px;&quot;/&gt;&lt;/a&gt;Okay, I did it again.  I’m publishing another app.  This is actually something that I needed and used and saved some money with.  It’s a little program that checks out your phone’s hardware and determines if it has a proximity detector or not.  And if it does, it tells you about it.&lt;br/&gt;&lt;br/&gt;What’s a proximity detector?  Pretty simple, really.  It’s special hardware that determines if you are talking on your phone or not.  It usually works by shining a little infrared light.  If it bounces off your ear into a light detector, then it assumes you’re talking on your phone.  Otherwise it assumes you’re looking at it.  &lt;br/&gt;&lt;br/&gt;This is how your phone knows to turn off the screen while you’re talking and turn it back on again so you can hang up.&lt;br/&gt;&lt;br/&gt;I had a phone that was a real bitch to hang up.  Why?  It seemed as if it didn’t know if I was talking or not.  ...some code later, and I noticed that it did not have one of these detectors.  Unacceptable.  Phone returned, and now I have a much better phone that I can actually use.&lt;br/&gt;&lt;br/&gt;I just uploaded this to the Google Market, so the link hasn’t been created yet, sorry.  But for you sly and sexy readers of my blog, you can download it here: &lt;a href=&quot;Entries/2012/2/17_OMG%21_Not_another_little_app%21_files/proximity.apk&quot;&gt;proximity.apk&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;Sorry about the long bit with no updates--I’ve been busy (hehe).</description>
+      <enclosure url="http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2012/2/17_OMG%21_Not_another_little_app%21_files/icon%20512x512%20%28higher%20compression%29_1.png" length="48432" type="image/png"/>
+    </item>
+    <item>
+      <title>Trippy Tic Tac Toe</title>
+      <link>http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/12/4_Trippy_Tic_Tac_Toe.html</link>
+      <guid isPermaLink="false">c381756f-412d-4477-b906-fa7961f710cd</guid>
+      <pubDate>Sun, 4 Dec 2011 14:40:29 -0600</pubDate>
+      <description>&lt;a href=&quot;http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/12/4_Trippy_Tic_Tac_Toe_files/icon_1.png&quot;&gt;&lt;img src=&quot;http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Media/object001_2.png&quot; style=&quot;float:left; padding-right:10px; padding-bottom:10px; width:157px; height:186px;&quot;/&gt;&lt;/a&gt;Yep, here’s a new one.  And it’s in 3D--just like your face!  While I’ve written two 3D graphics engines myself and extensively used two others, I’ve never really played with OpenGL (the open-source 3D graphics system used by everyone from John Carmack of Quake fame to every open-source game-geek alive).  So I’m filling that hole while doing a neat little Android app at the same time.&lt;br/&gt;&lt;br/&gt;Specifically, this uses OpenGL ES, the version made especially for mobile devices like Android and iPhones.  To be honest, OpenGL ES is really not mature yet--lots and lots of really useful things are missing.  And some important things are nearly impossible to do (like certain error condition tests!).  But you can definitely do a lot.&lt;br/&gt;&lt;br/&gt;To get this thing out and working quickly, I didn’t bother with a true light source, but it’s fun enough and works.  The hard part was making the shapes myself.  I used graph paper, pencils, and a lot of erasers (my floor is covered with tiny eraser bits--kind of funny to walk on).  Check it out.&lt;br/&gt;&lt;br/&gt;&lt;a href=&quot;Entries/2011/12/4_Trippy_Tic_Tac_Toe_files/trippy_tictactoe.apk&quot;&gt;trippy_tictactoe.apk&lt;/a&gt;</description>
+      <enclosure url="http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/12/4_Trippy_Tic_Tac_Toe_files/icon_1.png" length="315394" type="image/png"/>
+    </item>
+    <item>
+      <title>Introducing a new calculator for SMPTE</title>
+      <link>http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/10/14_Introducing_a_new_calculator_for_SMPTE.html</link>
+      <guid isPermaLink="false">b11d3cc0-b6ce-412c-b122-62b814f728f0</guid>
+      <pubDate>Fri, 14 Oct 2011 17:49:26 -0500</pubDate>
+      <description>&lt;a href=&quot;http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/10/14_Introducing_a_new_calculator_for_SMPTE_files/icon%20%28120x120%29%2002_1.png&quot;&gt;&lt;img src=&quot;http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Media/object020_1.png&quot; style=&quot;float:left; padding-right:10px; padding-bottom:10px; width:157px; height:157px;&quot;/&gt;&lt;/a&gt;Okay, after what I thought was going to be a no-brainer quickie app, I’m finally ready to announce a calculator for people who deal with timecodes (primarily editors, directors, sound designers, etc.).  Whew, not only was the basic algorithm a major hurdle, but because I thought this was going to be easy I coded fast and loose.  Now there’s the payback of bunches of bugs.&lt;br/&gt;&lt;br/&gt;So, I’m releasing a Beta version (v. 0.9).  I expect bugs here; so should you.  And tell me about ‘em.  They *will* be fixed.  And then there’ll be the real release, a nice clean version (1.0, yay!).&lt;br/&gt;&lt;br/&gt;And yeah, like my other little apps, this will be a no-cost add-free app for the Android.  So ask for it on you Android Market.&lt;br/&gt;&lt;br/&gt;App Features:&lt;br/&gt;	*	Add, Subtract, Multiply, and Divide SMPTE timecodes.&lt;br/&gt;	*	Set any frame rate from 3 to 99 frames per second.&lt;br/&gt;	*	Correctly and intuitively works with Drop Frame timecodes, used extensively in NTSC environments.&lt;br/&gt;	*	Works nicely with built-in keyboards.&lt;br/&gt;	*	Optionally implements sound and haptic (vibrations) feedback.&lt;br/&gt;	*	Saves your preferences.</description>
+      <enclosure url="http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/10/14_Introducing_a_new_calculator_for_SMPTE_files/icon%20%28120x120%29%2002_1.png" length="28666" type="image/png"/>
+    </item>
+    <item>
+      <title>Counting down...</title>
+      <link>http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/5/22_Counting_down....html</link>
+      <guid isPermaLink="false">4447c037-a7cb-43a7-87f1-6917edd82b52</guid>
+      <pubDate>Sun, 22 May 2011 19:55:18 -0500</pubDate>
+      <description>Was showing friends my stopwatch app at a party last night, and one guy thought it was a countdown timer for the “rapture” yesterday.  Cute.  Fortunately no one at that particular party flew up into the air, so we all had a good time.  A *very* good time!&lt;br/&gt;&lt;br/&gt;So I’m gonna make a count-down timer app.  Why not?  The stopwatch worked rather nicely, and this is essentially just going in reverse.  It’s all about the user interface now.&lt;br/&gt;&lt;br/&gt;So as soon as I get the stopwatch on the marketplace, look out for the countdown timer.&lt;br/&gt;&lt;br/&gt;Oh yeah, if any of you have UI ideas or a nice drawing for an icon, give me a buzz.</description>
+    </item>
+    <item>
+      <title>Just a stopwatch--nothing more.</title>
+      <link>http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/5/20_Sounds_at_the_beach.html</link>
+      <guid isPermaLink="false">01dec39e-ce67-4fa6-9bbc-bf71dca4be53</guid>
+      <pubDate>Fri, 20 May 2011 01:37:17 -0500</pubDate>
+      <description>&lt;a href=&quot;http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/5/20_Sounds_at_the_beach_files/icon_1.png&quot;&gt;&lt;img src=&quot;http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Media/object000_1.png&quot; style=&quot;float:left; padding-right:10px; padding-bottom:10px; width:130px; height:154px;&quot;/&gt;&lt;/a&gt;Okay, just got this thing working very nicely on my Motorola Backflip (OS 2.1--yep, I upgraded from 1.5; well worth it).&lt;br/&gt;&lt;br/&gt;This little thingy was fun!  Took me only eight hours to make it work flawlessly.  I spent another day adding a few minor features (like the option to have sound or vibrations) and testing.&lt;br/&gt;&lt;br/&gt;Oh yeah, it should work well into the 22nd century, counting the seconds all the way.  And yeah, it uses NO processor time when running in the background!  Isn’t that neat?&lt;br/&gt;&lt;br/&gt;It’s available NOW on the marketplace.  Want to skip the marketplace? then download the apk directly by right-clicking on the icon above and choose “save-link-as”.&lt;br/&gt;&lt;br/&gt;Be the first on your block to have this nice and simple app that...keeps track of elapsed time!  Weeeee!</description>
+      <enclosure url="http://sleepfuriously.com/Scott_Morgan_Biggs/Android_Apps/Entries/2011/5/20_Sounds_at_the_beach_files/icon_1.png" length="5527" type="image/png"/>
+    </item>
+  </channel>
+</rss>

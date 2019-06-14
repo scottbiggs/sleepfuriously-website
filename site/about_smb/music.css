@@ -1,0 +1,43 @@
+/**
+ * This file is for a couple of things unique to the music.html
+ * file.  I've done some special tricks to make the music images
+ * look nice.
+ */
+
+/** This DIV holds my picture et al **/
+#header #self_pic {
+	margin: 0 auto;
+	padding: 0;
+	width: 480px;	/* width of the image */
+	font-size: 90%;
+}
+
+#header #self_pic img {
+	/* Only works on Chrome and Safari */
+	-webkit-box-reflect: below 1px
+		-webkit-gradient(linear, center top, center bottom,
+						 color-stop(75%, transparent),
+						 from(transparent),
+						 to(rgba(0,0,0,.4)));
+}
+
+/***	To center big images outside the box div	***/
+#invention_on_albinoni {
+	width: 200%;
+	height: 800px;		/* actual height of image */
+	text-align: center;
+	margin-left: -50%;
+	color: #000000;	/* no text */
+	background: no-repeat center url("images/invention (theme by albinoni) (even smaller).jpg");
+}
+
+
+#my_invention {
+	width: 200%;
+	height: 728px;
+	text-align: center;
+	margin-left: -50%;
+	color: #000000;	/* no text */
+	background: no-repeat center url("images/invention (even smaller).jpg");
+}
+

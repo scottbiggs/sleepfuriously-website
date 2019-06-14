@@ -1,0 +1,25 @@
+/* tutorial 4 from http://css.maxdesign.com.au/floatutorial
+*/
+
+.thumbnail {
+	float: left;
+	width: 120px;
+	height: 240px;
+	border: 2px solid #707;
+	margin: 0 15px 15px 0;
+	padding: 5px;
+}
+
+/* Overrides the width of the images within .thumbnail */
+.thumbnail img {
+	width: 120px;
+	height: 180px;
+}
+
+.clearboth {
+	clear: both;
+}
+
+#content {
+  margin : 0 25% 0 0;	/* gotta have something here--all zeros won't work */
+}

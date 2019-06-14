@@ -1,0 +1,41 @@
+/*
+	getlost.css
+	
+	This is the css file for the Get Lost! tree.
+*/
+
+
+
+body {
+	background: black;
+	color: #f0f0f0;
+	margin-left: 2em;
+	font-family: sans-serif;
+}
+
+p {
+	width: 30em;
+}
+
+.single_line {
+	color: aqua;
+	margin: 0 0 0 2em;
+	padding: 0;
+	width: 40em;
+}
+
+#right-side {
+	margin: 110px 100px 0 0;	/* top & right margins */
+	float: right;
+	width: 30%;
+	font-size: 110%;
+/*	color: #73d4ff; */
+	color: #ffff00;
+}
+
+
+ul h6 {		/* for H6 only within a List Element */
+	padding-top: 0;
+	margin-top: 0;
+}
+

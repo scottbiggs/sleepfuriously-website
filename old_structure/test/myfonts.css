@@ -1,0 +1,19 @@
+/* Allows custom fonts */
+
+/* Necessary declaration for browser compatibility */
+@font-face {
+	font-family: 'HippyFontFamily';
+	src: url('BOCKLOO.TTF'); /* IE9 Compat Modes */
+	src: url('BOCKLOO.TTF?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+		url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+		url('BOCKLOO.TTF')  format('truetype'), /* Safari, Android, iOS */
+		url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+/* Usage example */
+
+body {
+	font-family: 'HippyFontFamily', Fallback, sans-serif;
+}
+	

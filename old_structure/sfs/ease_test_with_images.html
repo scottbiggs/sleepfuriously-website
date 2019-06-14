@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Final Testing of Easing Functions, now with images!</title>
+
+	<script src="sfs.js"></script>
+
+	<style type="text/css">
+		body {
+			background-color: #c0c0c0;
+			width: 1500px;
+		}
+
+		.middle {
+			/* float: left; */
+			float: right;
+			padding-left 500px;
+			margin: 0;
+			padding: 0;
+		}
+		.float_left { float: left; margin-left: 0; }
+		.float_right { float: right; margin-right: 0; }
+		.clear { clear: both; }
+
+	</style>
+
+</head>
+
+
+<!-- ======================================= -->
+
+
+<body>
+	<h1 id="top_of_page">Top of Page</h1>
+	<h3 id="top_sub">This page tests my ease javascript file.  This should be the
+		final test before implementing the real webpage.
+		<button onclick="ease_scroll_to('pic4', 750, 2);">go to pic4</button>
+	</h3>
+		<table id="main_table" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><img id="pic1" src="images/one.png" height="400" width="800"/></td>
+			<td><img id="pic2" src="images/two.png" height="400" width="800"/></td>
+			<td><img id="pic3" src="images/three.png" height="400" width="800"/></td>
+		</tr>
+		<tr>
+			<td><img id="pic4" src="images/four.png" height="400" width="800"/></td>
+			<td><img id="pic5" src="images/five.png" height="400" width="800"/></td>
+			<td><img id="pic6" src="images/six.png" height="400" width="800"/></td>
+		</tr>
+	</table>
+
+	<button onclick="ease_scroll_to('bottom_of_page', 750, 2);">Go To Bottom</button>
+	<button onclick="ease_scroll_to('middle_of_page', 750, 2);">Go To Middle</button>
+	<button onclick="ease_scroll_to('pic2', 750, 2);">go to pic2</button>
+	<button onclick="ease_scroll_to('pic3', 750, 2);">go to pic3</button>
+
+	<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper purus eu lorem dapibus, et tempor enim cursus. Praesent finibus purus quam. Nullam eleifend lectus orci, nec commodo erat iaculis vitae. Vivamus volutpat enim id massa mollis dapibus. Nunc egestas libero nulla, ac suscipit massa venenatis tincidunt. Praesent eu egestas orci. Proin eget egestas turpis.
+	</h2>
+	<h2>Pellentesque ornare nulla odio, ac interdum diam tristique ut. Aliquam porttitor neque libero, eget tincidunt augue interdum ut. Suspendisse eget dignissim neque. Maecenas tempor rutrum orci, at accumsan velit vehicula vitae. Cras nulla justo, ultrices vel pulvinar ac, semper sed sapien. Praesent iaculis libero non varius mattis. Duis congue a libero ac pulvinar. Phasellus nec mauris a tellus dictum iaculis. Suspendisse tempus vel ex in condimentum. Donec nibh nunc, sagittis vitae convallis ac, hendrerit a nisi. Integer feugiat nulla sapien, ut ullamcorper quam porta placerat. Donec pulvinar turpis sed ligula mollis, facilisis cursus augue molestie. Suspendisse consectetur auctor accumsan. Integer at nulla vel magna porta ornare vel vel metus. Etiam in convallis eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+	</h2>
+	<h2>Duis vel augue orci. Nam lacinia odio ut accumsan vulputate. Proin risus odio, bibendum nec imperdiet nec, vulputate nec lacus. Vestibulum egestas maximus orci id tempus. Nulla commodo risus ac ultricies maximus. Quisque risus arcu, efficitur eget turpis mattis, congue viverra erat. Maecenas ultrices lorem in nunc hendrerit, nec sollicitudin ex accumsan. Curabitur ut accumsan elit, ac ornare elit. Quisque at sagittis enim. Donec at iaculis leo. In eget vehicula lorem. Sed leo est, tempus euismod varius non, molestie et orci. Cras ut scelerisque eros. Aliquam congue metus augue, in pellentesque dui pulvinar quis.
+	</h2>
+	<h1 id="middle_of_page" class='middle'>(MIDDLE)</h1>
+	<h2>Aliquam rutrum eros eget sapien maximus, ut porta risus tempus. Sed molestie tincidunt tempus. Praesent rutrum tincidunt fermentum. Etiam luctus augue id imperdiet dapibus. Suspendisse ultrices nisl nisi, vitae sollicitudin odio tincidunt ac. Quisque pharetra semper bibendum. Duis in justo velit. Ut gravida, tortor vitae varius gravida, lacus erat tincidunt lorem, id tristique purus purus eu mauris. Nunc nec libero eu felis volutpat malesuada. Donec non dolor sollicitudin, convallis nulla vitae, ullamcorper lorem. Sed nec commodo nisi.
+	</h2>
+	<h2>Curabitur non metus nec massa tincidunt lobortis et ac nisi. Nam malesuada dictum commodo. Vestibulum ipsum turpis, faucibus et vehicula et, scelerisque luctus massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ultrices ante tincidunt placerat condimentum. Morbi eu lobortis est. Vivamus vehicula placerat enim sed mollis. Duis enim neque, imperdiet et lacinia id, convallis sit amet nisl. Nam ac aliquet lectus, at finibus nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean congue vulputate mauris, a sodales ligula commodo id. Proin non tellus accumsan, efficitur lorem nec, lobortis massa. Donec convallis quam turpis. Quisque porta pellentesque elit pharetra pharetra. Phasellus libero augue, suscipit nec iaculis et, pulvinar at lorem.
+	</h2>
+	<h2>Maecenas vitae laoreet urna. Aliquam erat volutpat. Nulla id diam vestibulum, vehicula mauris nec, tincidunt tortor. In lectus orci, rhoncus eu aliquet posuere, sodales nec justo. Suspendisse convallis augue orci, porta molestie leo tincidunt varius. Maecenas sollicitudin eros quam, at gravida risus consequat et. Vivamus luctus velit quis ligula congue finibus. Donec massa ligula, scelerisque sed bibendum nec, facilisis ut lectus. In cursus condimentum lacus blandit viverra.
+	</h2>
+	<h2>Aenean at urna turpis. Curabitur augue ligula, accumsan id semper non, convallis id est. Donec feugiat dui a orci porttitor fringilla. Ut sed ipsum accumsan, blandit ligula a, tempus metus. Sed condimentum felis interdum, dictum nisl sit amet, semper tortor. Pellentesque vestibulum massa ac ultrices sodales. Proin varius condimentum nisl aliquet faucibus. Aenean posuere rutrum leo, vel interdum urna dapibus sollicitudin. Proin molestie blandit ex, ac mattis odio. Aliquam interdum fringilla purus vel ornare. Nunc et arcu tincidunt, tincidunt nibh et, bibendum erat.
+	</h2>
+
+	<button onclick="ease_scroll_to('top_of_page', 750, 2);">Go To Top</button>
+	<button onclick="ease_scroll_to('middle_of_page', 750, 2);">Go To Middle</button>
+	<h1 id="bottom_of_page">Bottom of page</h1>
+</body>
+
+
+
+</html>

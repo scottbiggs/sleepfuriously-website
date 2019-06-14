@@ -1,0 +1,381 @@
+/*
+ * This file and all files on this website are Copyright Scott Morgan Biggs 2012.
+ * Please be nice about using this material.
+ *
+ * The Cascading Style Sheet for the Actor's Gym websites.
+ *
+ * Colors used:
+ *
+ *	ivory				#fffff0
+ *	black				#000
+ *	dark_warm_gray		#504848
+ *	darker_gray			#222
+ *
+ *
+ * 	orange				#ff7800
+ *	dark orange			#bf7330
+ *	darker orange		#a64e00
+ *	light orange		#ff9a40
+ *	lighter orange		#ffb573
+ *	cyan				#35c0cd
+ *	light cyan			#5ec4ce
+ *	dark cyan			#028e9b
+ *	darker cyan			#1e6d74
+ *	darkest cyan		#015c65
+ *
+ *	medium light blue	#9bf
+ *	deep blue (links)	#1c4fdb
+ *
+ */
+
+
+/****************************************/
+/*	Type Selectors						*/
+/****************************************/
+
+html { overflow-y: scroll; }
+body {
+	font: 100% Helvetica, sans-serif;
+	line-height:1;
+	background-color: black;
+	color: #fffff0;		/* ivory */
+	font-family: Tahoma,Arial,Helvetica,sans-serif;
+}
+
+ul { list-style: none inside; }
+p {
+	font: 1.3em/1.3em;	/* defines fontsize and lineheight at same time*/
+	margin: 0 0 1.3em 0;
+	line-height: 1.2;
+}
+
+h1 { font-size: 350%; line-height: 1; }
+h2 { font-size: 250%; line-height: 1; }
+h3 { font-size: 200%; line-height: 1; }
+h4 { font-size: 175%; line-height: 1; }
+h5 { font-size: 140%; line-height: 1; }
+h6 { font-size: 100%; line-height: 1; }
+
+/* The order of these is rather important */
+
+/*
+a:link { color: blue; }
+a:visited { color: purple; }
+a:hover { color: cyan; }
+a:active {color: yellow; } */	/* when being depressed */
+
+a {
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+
+/****************************************/
+/*	Class Selectors						*/
+/****************************************/
+
+	/* Some basics */
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+	margin-right: 0.5em;
+}
+
+.clear {
+	clear: both;
+}
+
+/* ----- footnotes ----- */
+.footnote {
+	font-size: 90%;
+}
+
+/* ----- For a bunch of pix ----- */
+.gallery_container {
+
+}
+
+.gallery_item {
+	float: left;
+	width: auto;
+	height: auto;
+/*	border: 2px solid #707; */
+	margin: 0 15px 15px 0;
+	padding: 0 5px 0 5px;
+}
+
+/* Overrides the width of the images within .gallery */
+.gallery_item img {
+	width: auto;
+	height: auto;
+}
+
+.gallery_item p {
+	font-family: sans-serif;
+	text-align: center;
+	font-size: 90%;
+	font-style: italic;
+	letter-spacing: .02em;
+}
+
+/* ----- Headline (use instead of H4) ----- */
+.headline {
+	font-size: 175%;
+	margin: 1.7em 0 .5em 0;
+	font-weight: bold;
+}
+
+/* ----- Headline 2, use this for a secondary headline ----- */
+.headline2 {
+	font-size: 140%;
+	margin: 1.7em 0 .8em 3em;
+	font-weight: bold;
+}
+
+/* ----- The sub-head. Appears just below the Headline ----- */
+.deck {
+	font-size: 105%;
+	font-weight: bold;
+	margin: 1em 0 1.1em 2em;
+}
+
+
+
+/****************************************/
+/*	ID Selectors						*/
+/****************************************/
+
+
+/* ----- container ----- */
+/* Defines the entire display area.  Everything on this page is displayed
+  within "container." */
+#container {
+	width: 92%;			/* Fill 90% of the width of the viewport. */
+	margin: 2% auto;	/* 10 pixel margin at top and bottom, and "auto"
+						  makes sure that left and right are centered. */
+	background-color: #d8d3d3;
+	color: #223;
+}
+
+/* ----- Construction Notice ----- */
+/*
+#construction {
+	font-family: monospace;
+	font-weight: lighter;
+	padding: 15px;
+	margin: 0;
+	background-color: #700;
+	color: white;
+	text-align: center;
+}
+*/
+
+/* ------------------------------------ */
+/* header								*/
+/* ------------------------------------ */
+#header {
+	font-family: monospace;
+	margin: 0;
+	padding: 0;
+	padding-right: 10%;
+	color: #ff7800;
+	background-color: #222;
+	border: 1px solid #222;	/* Prevents banding. */
+
+	text-align: right;
+
+}
+#header h1 {
+	line-height: 1em;
+}
+#header h3 {
+	line-height: 1em;
+}
+
+
+/* ----- main ----- */
+#main {
+	margin-left: 21%;	/* width of navigation + all the margins and padding of higher level containers. */
+	border-left: 1px solid gray;
+	padding: 1.3em;
+	background-color: #ffffff;
+	height: 100%;
+	overflow: auto;		/* makes this container expand to include any child elements */
+}
+#main h2 {
+	line-height: 1.8em;
+}
+
+#main h5 { margin: 1em 2em 1em 2em; }
+
+
+#main p {
+	margin-bottom: 1em;
+}
+#main ul {
+	margin: 0 0 1.5em 2.5em;
+	list-style-type: disc;
+	list-style-position: outside;
+	font-size: 110%;
+}
+#main ul li {
+	margin: 0 0 .5em 0;
+}
+
+/* Colors of the links within #main */
+#main a:link { color: #1c4fdb; }
+#main a:visited { color: #1c4fdb; }
+#main a:hover { color: #527bed; }
+#main a:active {color: #7b9aed; }
+
+#main img {
+	margin: 0 20px 20px 20px;
+
+}
+
+
+.ul_header {
+	margin-bottom: .5em;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+/* ----- Pictures and Text ----- */
+.pics img {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.pics p {
+	margin-top: 0;
+	padding-top: 0;
+	font-size: 85%;
+	text-align: center;
+}
+
+
+/* ----- footnotes  ----- */
+#footnotes {
+	margin-top: 2.5em;
+	font-size: 95%;
+	padding-left: .9em;	/* make room for the star */
+	text-indent: -.9em;
+}
+
+/* ----- footer ----- */
+#footer {
+	border: 1px solid gray;
+
+	text-align: center;
+	font-size: 80%;
+	line-height: 120%;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: .6em 2em;
+	clear: both;
+}
+
+/* ----- navigation ----- */
+#navigation {
+	float: left;
+	width: 10em;
+	margin: 0;		/* Turn off any auto-margins. */
+	padding-top: 1em;	/* Give a little space for readability. */
+}
+
+
+#navigation li {
+	margin-top: 1.7em;
+	margin-bottom: 2em;
+}
+
+/* ----- Buttons ----- */
+
+.button {
+    padding: 5px 20px;
+    display: inline;
+    background: #777 url(images/nav_button.png) repeat-x bottom;
+    border: none;
+	box-shadow: 1.3px 2px 2px #333; /* right bottom spread color */
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 2px 2px 2px #333; /* right left fuzzy color */
+   }
+.button:hover {
+    background-position: 0 -48px;
+    }
+.button:active {
+    background-position: 0 top;
+/*
+    position: relative;
+    top: 1px;
+    padding: 6px 10px 4px;
+*/
+    }
+.inactive_button {
+    padding: 5px 20px;
+    display: inline;
+    background: #777 url(images/nav_button.png) repeat-x bottom;
+    border: none;
+	box-shadow: 1.3px 2px 2px #333; /* right bottom spread color */
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 2px 2px 2px #333; /* right left fuzzy color */
+    pointer-events: none;
+    cursor: default;
+
+    background-color: #ff7800;	/* makes it orange */
+}
+
+/*
+	Use this button for buttons that are not supposed to work at all.
+
+    position: relative;
+    top: 1px;
+    padding: 6px 10px 4px;
+ */
+.unavailable_button {
+    padding: 5px 20px;
+    display: inline;
+    background: #777 url(images/nav_button.png) repeat-x bottom;
+    border: none;
+	box-shadow: 1.3px 2px 2px #333; /* right bottom spread color */
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 2px 2px 2px #333; /* right left fuzzy color */
+    pointer-events: none;
+    cursor: default;
+
+/*    background-color: #ff7800;	/* makes it orange */
+}
+
+.button.red { background-color: #e50000; }
+.button.purple { background-color: #9400bf; }
+.button.green { background-color: #58aa00; }
+.button.orange { background-color: #ff7800; }
+.button.dark_orange { background-color: #bf7330; }
+.button.blue { background-color: #2c6da0; }
+.button.dark_cyan { background-color: #028e9b; }
+.button.black { background-color: #333; }
+.button.white { background-color: #fff; color: #000; text-shadow: 1px 1px #fff; }
+.button.small { font-size: 75%; padding: 3px 7px; }
+.button.small:hover { background-position: 0 -50px; }
+.button.small:active { padding: 4px 7px 2px; background-position: 0 top; }
+.button.large { font-size: 125%; padding: 7px 12px; }
+.button.large:hover { background-position: 0 -35px; }
+.button.large:active { padding: 8px 12px 6px; background-position: 0 top; }

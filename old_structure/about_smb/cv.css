@@ -1,0 +1,125 @@
+/**
+ *	This CSS file is for special items that pertain
+ *	ONLY to the cv.html page.  Should be
+ *	pretty sparse.
+ */
+
+
+/** This DIV holds my picture et al **/
+#header #self_pic {
+	margin: 0 auto;
+	padding: 0;
+	width: 580px;	/* width of the image */
+	font-size: 90%;
+}
+
+#header #name {
+	position: absolute;
+	width: 5em;
+	top: .5em;
+	left: 50%;
+	z-index: 10;
+	margin-left: 295px;
+}
+
+#header p {
+	text-align: center;
+}
+
+
+/**	This page uses very wide boxes */
+#main {
+	width: 90%;
+}
+.box {
+	margin: 5px auto 30px auto;
+	padding: 5px 10px 5px 10px;
+	border: 1px solid #a09a9a;
+	border-radius: 5px;
+	line-height: 1.2;
+	width: 95%;
+}
+.box p {	/* Override regular box stuff so we have a hanging indent */
+	margin: 0 10em 1.8em 0;
+	padding-left: 3em;
+	text-indent: 0;
+}
+
+/** For the table of my movie resume **/
+.box table {
+	width: 90%;
+	margin: 0 auto 1em auto;
+}
+
+.box table, td {
+	border:1px solid #706c6c;
+	border-collapse:collapse;
+}
+
+.box th {
+	font-size: 110%;
+	padding: .5em 0 .5em 0;
+}
+.box td {
+	padding: .2em .5em .2em .5em;
+}
+
+table a:link {color: #60b9ce; text-decoration: none; }
+table a:visited {color: #8d6dd6; text-decoration: none; }
+table a:hover {color: #c0f56e; text-decoration: none; }
+table a:active {color: #a3dae7; text-decoration: none; }
+
+
+.narrow {
+	margin: 0 auto 1em auto;
+	width: 50%;
+}
+
+/** Special stuff for resumes **/
+.job_title {
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.job_company {
+	font-style: italic;
+	font-size: 120%;
+	margin-left: 1em;
+}
+
+.job_location {
+	font-size: 120%;
+	margin-left: 1em;
+}
+
+.job_dates {
+	font-style: italic;
+	font-size: 120%;
+	position: absolute;
+	text-align: right	;
+	right: 10%;
+}
+
+/** For the technical part of the CV **/
+
+.tech_system {		/* The main section: the technical system that I have knowledge of. */
+	font-weight: bold;
+	font-size: 120%;
+	margin-bottom: .5em;
+}
+
+.tech_example {		/* A section where I describe a program or specific example of the parent system. */
+	margin-left: 3em;
+	display: list-item;
+}
+
+.tech_example p {
+	padding-left: .2em;
+}
+
+.tech_title {		/* The title of the description */
+	font-style: italic;
+	margin-right: 1.2em;
+	font-size: 105%;
+}
+

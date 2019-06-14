@@ -1,0 +1,87 @@
+-----------------------------
+George Washington Statue
+
+statue location:	30.284926, -97.739513
+					30°17'05.7"N, 97°44'22.2"W
+
+standing location:	30.284944, -97.739492
+					30°17'05.8"N, 97°44'22.2"W
+facing:		225
+
+Story:  Tell the story of the statue.
+
+-----------------------------
+	I Luv Video on Airport
+
+30°18'29.0"N 97°42'55.6"W
+30.308058, -97.715458
+
+facing:		any
+
+
+-----------------------------
+	Hancock Golf
+	The hardest hole in Texas
+
+30°18'03.2"N 97°43'32.2"W
+30.300890, -97.725606
+
+facing: 135
+
+
+-----------------------------
+	Best Apartment Complex in Austin
+
+30°18'00.8"N 97°44'20.4"W
+30.300207, -97.738997
+
+facing: any
+
+
+-----------------------------
+	View of Rice Owl on the Tower
+
+30°17'07.8"N 97°44'18.6"W
+30.285509, -97.738514
+
+facing:	315
+
+
+-----------------------------
+	Littlefield Building #1
+
+30°16'06.0"N 97°44'34.4"W
+30.268327, -97.742884
+
+facing:	95
+
+Here you can easily count the floors.
+
+-----------------------------
+	Littlefield Building #2
+
+30°16'06.7"N 97°44'34.1"W
+30.268514, -97.742804
+
+facing:	120
+
+Here you can see the little windows of the 7th & 1/2 floor.
+
+-----------------------------
+	Funny Wall
+
+Some street near N. Lamar
+
+-----------------------------
+	Decorated Bridge & Creek
+
+South Austin, near Oltorf & S. Lamar
+
+
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------
+-----------------------------

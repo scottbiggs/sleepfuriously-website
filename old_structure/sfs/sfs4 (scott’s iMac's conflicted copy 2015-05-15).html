@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+	<!-- Note:  To remove all the gaps in the table rows, I had to
+		switch from Strict to Transitional in the preceding statment.
+	-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--==========================================-->
+<head>
+	<meta name="index" content="base web page for the film production company, Sleep Furiously" />
+	<title>Sleep Furiously</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Scott Morgan Biggs" />
+	<meta name="Copyright" content="Copyright � 2015" />
+	<meta name="description" content="base web page for the film production company, Sleep Furiously"/>
+	<link rel="shortcut icon" href="images/sfs_favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="sfs.css" />
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!--	javascript															-->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- Holds the scrolling code -->
+<script src="anim_scroll.js"></script>
+
+<script type="text/javascript">
+
+	//----------------------------------
+	//	Globals & Constants
+	//----------------------------------
+
+	// The size of the original screen images.
+	var SCREEN_IMAGE_WIDTH = 800;
+	var SCREEN_IMAGE_HEIGHT = 600;
+
+	// The number of milliseconds for a scroll to take place.
+	var SCROLL_TIME = 750;
+
+	// The steepness of the easing.  2 uses a quadratic (squared).
+	var EASE_AMOUNT = 2;
+
+	// Variables that tell us which screen we are on.
+	//
+	//	1	2	3
+	//
+	//	4	5	6
+	//
+	var CurrentScreen = 2;		// start with image #2
+
+
+	//----------------------------------
+	//	Overloaded Functions
+	//----------------------------------
+
+	//----------------------------
+	//	Overload the onload() function.  This is
+	//	called when the window has finished loading.
+	//
+	window.onload = function () {
+		window.onresize();
+	} // window.onload()
+
+
+	//----------------------------
+	//	This is called whenever the window is resized, which
+	//	is the same thing I do for when it's loaded.
+	//
+	window.onresize = function() {
+		var image = document.getElementById ("screen1");
+		set_img_full_screen(image);
+
+		image = document.getElementById("screen2");
+		set_img_full_screen(image);
+
+		image = document.getElementById("screen3");
+		set_img_full_screen(image);
+
+		image = document.getElementById("screen4");
+		set_img_full_screen(image);
+
+		image = document.getElementById("screen5");
+		set_img_full_screen(image);
+
+		image = document.getElementById("screen6");
+		set_img_full_screen(image);
+
+		scroll_to_screen (CurrentScreen);
+
+		var map = document.getElementById ("screen1_map");
+		var orig_map = document.getElementById("screen1_map_orig");
+		set_map_full_screen (orig_map,
+							 SCREEN_IMAGE_WIDTH, SCREEN_IMAGE_HEIGHT,
+							 map);
+
+		map = document.getElementById ("screen2_map");
+		orig_map = document.getElementById("screen2_map_orig");
+		set_map_full_screen (orig_map,
+							 SCREEN_IMAGE_WIDTH, SCREEN_IMAGE_HEIGHT,
+							 map);
+
+		map = document.getElementById ("screen3_map");
+		orig_map = document.getElementById("screen3_map_orig");
+		set_map_full_screen (orig_map,
+							 SCREEN_IMAGE_WIDTH, SCREEN_IMAGE_HEIGHT,
+							 map);
+
+		map = document.getElementById ("screen4_map");
+		orig_map = document.getElementById("screen4_map_orig");
+		set_map_full_screen (orig_map,
+							 SCREEN_IMAGE_WIDTH, SCREEN_IMAGE_HEIGHT,
+							 map);
+
+		map = document.getElementById ("screen5_map");
+		orig_map = document.getElementById("screen5_map_orig");
+		set_map_full_screen (orig_map,
+							 SCREEN_IMAGE_WIDTH, SCREEN_IMAGE_HEIGHT,
+							 map);
+
+		map = document.getElementById ("screen6_map");
+		orig_map = document.getElementById("screen6_map_orig");
+		set_map_full_screen (orig_map,
+							 SCREEN_IMAGE_WIDTH, SCREEN_IMAGE_HEIGHT,
+							 map);
+	} // window.onresize()
+
+	//----------------------------------
+	//	Helper Functions
+	//----------------------------------
+
+	//----------------------------------
+	//	Gets the width of the full viewport.  Should work
+	//	for all modern browsers.  The width of the scrollbars
+	//	is NOT part of the viewport width that's returned
+	//	from this function.
+	//
+	function get_viewport_width() {
+		return document.documentElement.clientWidth;
+	} // get_viewport_width()
+
+	//----------------------------------
+	// Gets height of the viewport.
+	//
+	function get_viewport_height() {
+		return document.documentElement.clientHeight;
+	} // get_viewport_height()
+
+
+	//----------------------------
+	//	Sets the width and height of the given image
+	//	to the full size of the viewport.
+	//
+	//	img		The image to modify.  This needs to
+	//			be an Element, not the name of the
+	//			image.
+	//
+	function set_img_full_screen (img) {
+		if (img && img.style) {
+			var height = get_viewport_height();
+			img.style.height = "" + height + "px";
+
+			var width = get_viewport_width();
+			img.style.width = "" + width + "px";
+		}
+		else {
+			alert ("problem with the image!");
+		}
+	} // set_img_full_screen (img)
+
+
+	//----------------------------
+	//	Scrolls the current view to center on the specified
+	//	screen.  Note that screens start on 1 (see above).
+	//
+	function scroll_to_screen (screen_num) {
+		switch (screen_num) {
+			case 1: ease_scroll_to ('screen1', SCROLL_TIME, EASE_AMOUNT); break;
+			case 2: ease_scroll_to ('screen2', SCROLL_TIME, EASE_AMOUNT); break;
+			case 3: ease_scroll_to ('screen3', SCROLL_TIME, EASE_AMOUNT); break;
+			case 4: ease_scroll_to ('screen4', SCROLL_TIME, EASE_AMOUNT); break;
+			case 5: ease_scroll_to ('screen5', SCROLL_TIME, EASE_AMOUNT); break;
+			case 6: ease_scroll_to ('screen6', SCROLL_TIME, EASE_AMOUNT); break;
+			default:
+				alert("Illegal number in scroll_to_screen ( " + screen_num + " )");
+				break;
+		}
+	} // scroll_to_screen (screen_num)
+
+	//----------------------------
+	//	Alters the given map so that it is proportionally
+	//	stretched (or shrunk) to be full screen.
+	//
+	//	input
+	//		orig_map	The original map coordinates.  These
+	//					are used for reference to create the
+	//					new coordinates.  The numbers in this
+	//					map are based on the original map size.
+	//					This is the ELEMENT, not the ID!
+	//
+	//		orig_x		The width (in pixels) of the original
+	//					map coordinates.
+	//		orig_y		Same for y.
+	//
+	//	output
+	//		map 	The map to change.  Current contents
+	//				are replaced with new coordinates.  Also
+	//				this is the ELEMENT, not the ID.
+	//
+	function set_map_full_screen (orig_map, orig_x, orig_y,
+								  map) {
+		var i, j;
+		var width = get_viewport_width();
+		var height = get_viewport_height();
+
+		var width_ratio = width / orig_x;
+		var height_ratio = height / orig_y;
+
+		// Grab all the areas and put 'em into an array.
+		var map_areas = map.getElementsByTagName('area');
+
+		// Make an array of an array of numbers.  These numbers
+		// are taken from the 'areas' of the map.
+		var coords = new Array();
+		for (i = 0; i < map_areas.length; i++) {
+			coords[i] = map_areas[i].coords.split(',');
+		}
+
+		// Use the original map to begin the calculations.
+		var orig_map_areas = orig_map.getElementsByTagName('area');
+		var orig_coords = new Array();
+		for (i = 0; i < orig_map_areas.length; i++) {
+			orig_coords[i] = orig_map_areas[i].coords.split(',');
+		}
+
+		// Now do the changes.  The first number in coords[i]
+		// array is the x, the next is the corresponding y.
+		// Go through each two at a time, modifying as necessary.
+		// Note that this works regardless of the type of shape
+		// used in the areas.
+		for (i = 0; i < map_areas.length; i++) {
+			for (j = 0; j < coords[i].length; j += 2) {
+				coords[i][j] = orig_coords[i][j] * width_ratio;
+				coords[i][j + 1] = orig_coords[i][j + 1] * height_ratio;
+			}
+		}
+
+		// Save the changes
+		for (i = 0; i < map_areas.length; i++) {
+			map_areas[i].coords = coords[i];
+		}
+
+	} // set_map_full_screen (orig_map, orig_x, orig_y, map)
+	
+	
+	//----------------------------
+	//	Scales the given element so that it is adjusted in
+	//	proportion to a whole screen.  
+	//
+	//	For example, if to map an image to full-screen 
+	//	(via the routine above), we need to change an 800x600
+	//	image to 1200x900, that means the width is multiplied
+	//	by 1.5 as well as the width.  This routine will apply
+	//	that same proportional multiplication to an ABSOLUTE
+	//	POSITIONING (required) of an element.
+	//
+	//	input:
+	//		el		The html element (not the name) to modify.
+	//				The data-left, data-top, data-width, and 
+	//				data-height MUST be specified in the element.
+	//				This information is used to make the calculations.
+	//
+	function scale_element (el) {
+	} // scale_element (el)
+	
+	
+	function testclick() {
+		// Get the element in question
+		var el = document.getElementById("info_box");
+		alert("el = " + el.name);
+/*
+		var left = el.dataset.left;
+		var top = el.dataset.top;
+		var width = el.dataset.width;
+		var height = el.dataset.heigh;
+		alert ("test: left = " + left + ", top = " + top + ", width = " + width + ", height = " + height);
+*/
+	}
+</script>
+
+
+</head>
+
+
+<!--==========================================-->
+<body>
+
+	<table id="main_table" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id="screen1" class="page_img" src="images/info_screen.png" usemap="#screen1_map"/>
+				<div id="info_box" onclick="testclick()">
+					<h3>Title</h3>
+					<p>And some text.</p>
+					<p>And some more text.  Is that enought?</p>
+					<p>No.</p>
+					<p>We need more.  Lots more.  This is a test, after all. And I'm testing a really really long line. Do you think this line is long enough? I'm not sure.</p>
+					<p>Ok, I get it.</p>
+					<p>So what should we talk about?</p>
+					<p>Not that old song again.</p>
+					<p>...Let's not do this.  Already tired.</p>
+					<p>Well, I guess you're not tired enough.</p>
+					<p>Go on.</p>
+					<p>Nothing to say.  Really.</p>
+					<p>Nothing?</p>
+					<p>Nothing.</p>
+					<p>Ok.</p>
+					<p>...</p>
+					<p>Sigh</p>
+					<p>What are you sighing about?</p>
+					<p>Sometimes I sigh for no reason.</p>
+					<p>No you don't.</p>
+					<p>Really?</p>
+					<p>There's something, always something that causes a sigh.</p>
+					<p>Such as?</p>
+					<p>Such as tiredness, boredom, exhaustion, thought shift, lack of oxygen, relaxing, etcetera etcetera.</p>
+				</div>
+			</td>
+			<td><img id="screen2" class="page_img" src="images/blackboad-just_chalk05.png" usemap="#screen2_map"/></td>
+			<td><img id="screen3" class="page_img" src="images/suspects_screen.png" usemap="#screen3_map"/></td>
+		</tr>
+		<tr>
+			<td><img id="screen4" class="page_img" src="test4.jpg" usemap="#screen4_map"/></td>
+			<td><img id="screen5" class="page_img" src="test5.jpg" usemap="#screen5_map"/></td>
+			<td><img id="screen6" class="page_img" src="test6.jpg" usemap="#screen6_map"/></td>
+		</tr>
+	</table>
+
+
+	<!-- The button map for screen 1, the info screen -->
+	<map name="screen1_map" id="screen1_map">
+		<area shape="rect" onclick="scroll_to_screen(2);" title="home" alt="home"
+			  coords="670,10, 797,114" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="people" alt="people"
+			  coords="627,136, 797,239" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="awards" alt="awards"
+			  coords="2,519, 184,599" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="movies" alt="movies"
+			  coords="439,477, 579,599" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="employment" alt="employment"
+			  coords="637,474, 784,597" />
+	</map>
+	<map name="screen1_map_orig" id="screen1_map_orig">
+		<area shape="rect" onclick="scroll_to_screen(2);" title="home" alt="home"
+			  coords="670,10, 797,114" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="people" alt="people"
+			  coords="627,136, 797,239" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="awards" alt="awards"
+			  coords="2,519, 184,599" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="movies" alt="movies"
+			  coords="439,477, 579,599" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="employment" alt="employment"
+			  coords="637,474, 784,597" />
+	</map>
+
+	<!-- The button map for screen 2, the home screen -->
+<!--
+	<map name="screen2_map" id="screen2_map">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="info" alt="info"
+			  coords="0,147, 138,318" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="people" alt="people"
+			  coords="663,152, 799,312" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="awards" alt="awards"
+			  coords="0,436, 142,599" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="movies" alt="movies"
+			  coords="210,509, 573,599" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="employment" alt="employment"
+			  coords="658,442, 799,599" />
+	</map>
+	<map name="screen2_map_orig" id="screen2_map_orig">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="0,147, 138,318" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="3" alt="3"
+			  coords="663,152, 799,312" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="4" alt="4"
+			  coords="0,436, 142,599" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="5" alt="5"
+			  coords="210,509, 573,599" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="6" alt="6"
+			  coords="658,442, 799,599" />
+	</map>
+-->
+	<map name="screen2_map" id="screen2_map">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="info" alt="info"
+			  coords="15,245, 99,342" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="people" alt="people"
+			  coords="636,254, 788,405" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="awards" alt="awards"
+			  coords="14,408, 160,548" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="movies" alt="movies"
+			  coords="307,479, 509,584" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="employment" alt="employment"
+			  coords="642,455, 786,577" />
+	</map>
+	<map name="screen2_map_orig" id="screen2_map_orig">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="info" alt="info"
+			  coords="15,245, 99,342" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="people" alt="people"
+			  coords="636,254, 788,405" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="awards" alt="awards"
+			  coords="14,408, 160,548" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="movies" alt="movies"
+			  coords="307,479, 509,584" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="employment" alt="employment"
+			  coords="642,455, 786,577" />
+	</map>
+
+	<!-- The button map for screen 3, the people screen -->
+	<map name="screen3_map" id="screen3_map">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="0,209, 149,379" />
+		<area shape="rect" onclick="scroll_to_screen(2);" title="2" alt="2"
+			  coords="186,212, 333,379" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="4" alt="4"
+			  coords="0,443, 148,599" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="5" alt="5"
+			  coords="188,443, 333,599" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="6" alt="6"
+			  coords="399,511, 739,599" />
+	</map>
+	<map name="screen3_map_orig" id="screen3_map_orig">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="0,209, 149,379" />
+		<area shape="rect" onclick="scroll_to_screen(2);" title="2" alt="2"
+			  coords="186,212, 333,379" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="4" alt="4"
+			  coords="0,443, 148,599" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="5" alt="5"
+			  coords="188,443, 333,599" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="6" alt="6"
+			  coords="399,511, 739,599" />
+	</map>
+
+	<!-- The button map for screen 4, the awards screen -->
+	<map name="screen4_map" id="screen4_map">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="66,0, 402,120" />
+		<area shape="rect" onclick="scroll_to_screen(2);" title="2" alt=2"
+			  coords="455,0, 618,178" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="3" alt="3"
+			  coords="656,0, 799,179" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="5" alt="5"
+			  coords="455,220, 612,394" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="6" alt="6"
+			  coords="658,217, 799,395" />
+	</map>
+	<map name="screen4_map_orig" id="screen4_map_orig">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="66,0, 402,120" />
+		<area shape="rect" onclick="scroll_to_screen(2);" title="2" alt=2"
+			  coords="455,0, 618,178" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="3" alt="3"
+			  coords="656,0, 799,179" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="5" alt="5"
+			  coords="455,220, 612,394" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="6" alt="6"
+			  coords="658,217, 799,395" />
+	</map>
+
+	<!-- The button map for screen 5, movies -->
+	<map name="screen5_map" id="screen5_map">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="0,0, 130,165" />
+		<area shape="rect" onclick="scroll_to_screen(2);" title="2" alt="2"
+			  coords="204,0, 578,96" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="3" alt="3"
+			  coords="669,0, 799,170" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="4" alt="4"
+			  coords="0,239, 132,403" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="6" alt="6"
+			  coords="665,250, 799,401" />
+	</map>
+	<map name="screen5_map_orig" id="screen5_map_orig">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="0,0, 130,165" />
+		<area shape="rect" onclick="scroll_to_screen(2);" title="2" alt="2"
+			  coords="204,0, 578,96" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="3" alt="3"
+			  coords="669,0, 799,170" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="4" alt="4"
+			  coords="0,239, 132,403" />
+		<area shape="rect" onclick="scroll_to_screen(6);" title="6" alt="6"
+			  coords="665,250, 799,401" />
+	</map>
+
+	<!-- The button map for screen 6, jobs -->
+	<map name="screen6_map" id="screen6_map">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="0,0, 151,279" />
+		<area shape="rect" onclick="scroll_to_screen(2);" title="2" alt="2"
+			  coords="189,0, 326,179" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="3" alt="3"
+			  coords="402,0, 738,92" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="4" alt="4"
+			  coords="0,229, 149,396" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="5" alt="5"
+			  coords="183,224, 326,394" />
+	</map>
+	<map name="screen6_map_orig" id="screen6_map_orig">
+		<area shape="rect" onclick="scroll_to_screen(1);" title="1" alt="1"
+			  coords="0,0, 151,279" />
+		<area shape="rect" onclick="scroll_to_screen(2);" title="2" alt="2"
+			  coords="189,0, 326,179" />
+		<area shape="rect" onclick="scroll_to_screen(3);" title="3" alt="3"
+			  coords="402,0, 738,92" />
+		<area shape="rect" onclick="scroll_to_screen(4);" title="4" alt="4"
+			  coords="0,229, 149,396" />
+		<area shape="rect" onclick="scroll_to_screen(5);" title="5" alt="5"
+			  coords="183,224, 326,394" />
+	</map>
+
+
+</body>
+</html>

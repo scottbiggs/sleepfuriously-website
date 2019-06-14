@@ -1,0 +1,28 @@
+/*
+	Created at https://onlinefontconverter.com/
+	
+	Useful website: takes a single font file and creates
+	an entire font-face package!
+*/
+/*
+@font-face {
+  font-family: 'CgPhenixAmerican';
+  src: url('fonts/CgPhenixAmerican.eot');
+  src: url('fonts/CgPhenixAmerican.eot?#iefix') format('embedded-opentype'),
+       url('fonts/CgPhenixAmerican.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+
+@font-face {
+  font-family: 'CgPhenixAmerican';
+  src: url('fonts/CgPhenixAmerican.woff') format('woff'),
+       url('fonts/CgPhenixAmerican.svg#CgPhenixAmerican') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+	font-family: 'CgPhenixAmerican', Fallback, sans-serif;
+}

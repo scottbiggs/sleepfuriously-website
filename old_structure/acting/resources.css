@@ -1,0 +1,85 @@
+/**
+ *	CSS file for the resources.html file ONLY
+ */
+
+
+hr {
+	margin: 2.5em 3em 1em 3em;
+	border-top: solid 1px black;
+}
+
+/*
+ul.def_list {
+	border-top: solid 1px black;
+	margin-top: 2em;
+}
+*/
+
+/** List Items (unordered) for the definitions list **/
+ul.def_list li {
+	padding-top: 1em;
+	padding-bottom: 1em;	/* padding because margins are overriden in acting.css */
+}
+
+/** Definition Lists **/
+dl {
+	margin-left: 2em;
+}
+dt {
+	font-weight: bold;
+	margin-bottom: .3em;
+	list-style: circle;
+	display: list-item;
+}
+dd {
+	margin-bottom: .8em;
+	margin-left: 1.5em;
+}
+
+
+/** The word to be defined **/
+.def {
+	font-size: 120%;
+	font-weight: bold;
+	margin-bottom: .9em;
+}
+
+/** Add this to a <p> to have it prefixed with a "try it out: " **/
+.try:before {
+	font-weight: bold;
+	letter-spacing: 1.3px;
+	content: " ";
+	padding-left: 35px;
+	margin-right: 1em;
+	background-image: url("images/right_hand_35x16.png");
+	background-repeat: no-repeat;
+	background-position: 0 5px;
+}
+
+/** Large amount of quoted text. **/
+.quote {
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+#like_add_table {
+	width: 100%;
+	text-align: left;
+	table-layout: fixed;
+/*	border: solid 1px black;	*/
+	border-collapse: collapse;
+	border-radius: 3px;
+}
+#like_add_table th {
+	padding: .5em .5em;
+	text-align: center;
+	border-bottom: 2px solid black;
+	border-right: 30px solid #fff;
+	border-left: 30px solid #fff;
+	border-top: 2px solid white;
+}
+#like_add_table td {
+	padding: .5em .5em 1.3em .5em;
+	border-right: 30px solid #fff;
+	border-left: 30px solid #fff;
+}

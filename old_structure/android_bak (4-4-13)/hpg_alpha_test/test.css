@@ -1,0 +1,48 @@
+
+/*
+ *	Easy way to make a container stretch to hold an
+ *	entire float.  To use:
+ *
+ *		HTML
+ *			<div id="some_container_id" class="clearfix">
+ *			...
+ *			</div>
+ *
+ *			<div class="some_container_class clearfix">
+ *			...
+ *			</div>
+ */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+
+/***************************************************/
+
+#container {
+	background-color: #aad;
+	color: black;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 15px;
+}
+
+#right_block {
+	float: right;
+	width: 15%;
+	background-color: #ebb;
+	color: black;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 15px;
+	padding: 8px;
+}

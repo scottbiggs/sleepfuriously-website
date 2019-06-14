@@ -1,0 +1,75 @@
+/* tutorial 8 from http://css.maxdesign.com.au/floatutorial
+
+	Liquid (moves as the screen sizes change) two column layout with
+	header and footer.
+
+*/
+
+/* Defines the entire display area.  Everything on this page is displayed
+  within "container." */
+#container {
+	width: 90%;			/* Fill 90% of the width of the viewport. */
+	margin: 10px auto;	/* 10 pixel margin at top and bottom, and "auto"
+						  makes sure that left and right are centered. */
+	background-color: #fff;
+	color: #333;
+	border: 1px solid gray;	/* The border around everthing (our container). */
+	line-height: 130%;		/* Increase spacing of each line for readability. */
+}
+
+/* Banner area (or Header). */
+#top {
+	padding: .5em;		/* Half a character size of padding. */
+	background-color: #ddd;
+	border-bottom: 1px solid gray;	/* To seperate this area from the rest. */
+}
+
+/* Descendant Selector from #top to control h1. */
+#top h1 {
+	padding: 0;		/* Disable built-in padding for H1 */
+	margin: 0;
+}
+
+/* The left navigation area.  Use "float" to make it go to the left, but
+  remember we have to give it a width. */
+#leftnav {
+	float: left;
+	width: 160px;	/* You can use a percent here instead. */
+	margin: 0;		/* Turn off any auto-margins. */
+	padding: 1em;	/* Give a little space for readability. */
+}
+
+/* The main area of the window.  To keep it from wrapping around the naviga-
+  tion area, we make this area a "float: left", too, creating two overlapping
+  floats.  But this one will have a margin that's big enough to keep it to
+  the right of the navigation area. */
+#content {
+	margin-left: 200px;
+	border-left: 1px solid gray;	/* Could cause probs if the nav area is
+									  bigger than this area. If that's the
+									  case, put the border in the nav area. */
+	padding: 1em;		/* For readability */
+	max-width: 32em;	/* Not necessary, but I'm demonstrating how one can
+						  restrict the width of a div (you may have to zoom
+						  out a lot to see this). */
+}
+
+/* The footer.  To make sure that it always stays below everthing else, we
+  must put the "clear" statement in. */
+#footer {
+	clear: both;	/* Keeps this area below any other "float" areas. */
+	margin: 0;		/* Remove any pre-defined margins. */
+	padding: .5em;	/* Again, readability. */
+	color: #333;
+	background-color: #ddd;
+	border-top: 1px solid gray;
+}
+
+/* The following remove the browser's pre-defined margins for paragraphs
+  and h2s. */
+#leftnav p {
+	margin: 0 0 1em 0;
+}
+#content h2 {
+	margin: 0 0 .5em 0;
+}

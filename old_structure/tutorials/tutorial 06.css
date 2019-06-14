@@ -1,0 +1,48 @@
+/* tutorial 6 from http://css.maxdesign.com.au/floatutorial
+
+  Take a simple unordered list and turn it into a horizontal navigation bar.
+
+  ===>>  Yeah!  This is what I'm talkin' about!!!
+
+*/
+
+/* Settings for unordered lists (ul) that have the id "navlist".*/
+ul#navlist {
+	list-style-type: none;	/* no bullets */
+	padding: 0;				/* no padding or margins (some browsers add 'em) */
+	margin: 0;
+	float: left;			/* Put the whole list to the left, which is needed
+							  to make it properly visible. */
+	width: 100%;			/* WHOLE width of the page. */
+	color: #fff;
+	background-color: #006;	/* I made this different from the list element
+							  color so you can see what is controlled by this
+							  statement and what is controlled below. */
+}
+
+/* Target list elements (li) within unordered lists (ul) with ID "navlist". */
+ul#navlist li {
+	display: inline;		/* force the list elements into one line */
+}
+
+/* Seperating and specifying the ANCHOR here, allows the entire box to be
+  clickable.  If I put all this in the above definition (ul#navlist li),
+  only the text would be clickable, not the entire box.
+
+  I think. */
+ul#navlist li a {
+	float: left;					/* sends the list to the left */
+	width: 5em;						/* necessary for the FLOAT statement */
+	color: #fff;
+	background-color: #036;
+	padding: 0.2em 1em;				/* defines the boxes */
+	text-decoration: none;			/* turns off underline */
+	border-right: 1px solid #fff;	/* defines border for each item */
+}
+
+/* Define hover activity for list elements (li) within unordered lists (ul)
+  with identifier "navlist".  Whew! */
+ul#navlist li a:hover {
+	background-color: #369;
+	color: #fff;
+}

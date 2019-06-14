@@ -1,0 +1,48 @@
+/** CSS file for the Contact page ONLY **/
+
+/** This DIV holds my picture et al **/
+#header #self_pic {
+	margin: 0 auto;
+	padding: 0;
+	width: 580px;	/* width of the image */
+	font-size: 90%;
+}
+
+#header #self_pic img {
+	/* Only works on Chrome and Safari */
+	-webkit-box-reflect: below 1px
+		-webkit-gradient(linear, center top, center bottom,
+						 color-stop(75%, transparent),
+						 from(transparent),
+						 to(rgba(0,0,0,.4)));
+}
+
+#header #name {
+	position: absolute;
+	width: 5em;
+	top: .5em;
+	left: 50%;
+	z-index: 10;
+	margin-left: 295px;
+}
+
+
+.box img {	/* to center an image */
+	display: block;
+	margin: 0 auto;
+	border: none;
+}
+
+.box p {
+/*	margin: .5em auto 2em auto; */
+	text-indent: 0;
+}
+
+.box hr {
+	width: 30%;
+	margin: 1.5em auto 1em auto;
+}
+
+.centered {
+	text-align: center;
+}

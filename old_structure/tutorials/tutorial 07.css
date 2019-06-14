@@ -1,0 +1,12 @@
+/* tutorial 7 from http://css.maxdesign.com.au/floatutorial
+
+	Using a float for make a fancy first letter.
+
+*/
+
+.dropcap {
+	float: left;
+	width: .7em;
+	font-size: 4em;
+	line-height: 83%;
+}

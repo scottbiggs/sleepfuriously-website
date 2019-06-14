@@ -1,0 +1,132 @@
+/**
+ * sfs.css
+ *
+ *	Base CSS file for the Sleep Furiously Studios web pages.
+ *
+ *	My colors:
+ *		chal,board black:	#212121
+ *		chalkboard green:	#3B653D
+ *
+ *		white chalk:	#f6f4f1
+ *
+ *		PASTEL CHALK
+ *		white:		#f4f4f0
+ *		purple:		#c4adc9
+ *		turquoise	#6fe7db
+ *		yellow:		#d6d963
+ *		pink:		#f2a3bd
+ *
+ *		FULL COLOR CHALK
+ *		red:		#ed7777
+ *		orange:		#fad48b
+ *		yellow:		#f5f9ad
+ *		green:		#bcdf8a
+ *		blue:		#94c0cc
+ */
+
+/*************************************
+ *	Cleaning House
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+html, body {
+	height:100%;
+	width: 100%;
+	background: black;
+	color: #fffafa;		/* text color is called Snow */
+	font-family: Century Gothic, sans-serif;
+}
+
+html {
+	overflow-y: scroll;	/* Inhibits horizontal scrollbar */
+}
+
+h1 h2 h3 h4 h5 h6 p {
+	color: #fffafa;
+}
+
+h1 { font-size: 350%; }
+h2 { font-size: 250%; }
+h3 { font-size: 200%; }
+h4 { font-size: 175%; }
+h5 { font-size: 140%; }
+h6 { font-size: 120%; }
+
+/* Must be in this order */
+a:link {color: #60b9ce; }
+a:visited {color: #8d6dd6; }
+a:hover {color: #c0f56e; }
+a:active {color: #a3dae7; }
+
+
+/*** Makes map areas have cursor changes
+ * https://stackoverflow.com/questions/6589768/cursor-not-changing-to-pointer-in-usemap-area-case
+ */
+area {
+	display: block;
+	cursor: pointer;
+}
+
+/*************************************
+ *	General Classes
+ */
+.clear { clear: both; }
+.float_left { float: left; margin-left: 0; }
+.float_right { float: right; margin-right: 0; }
+
+/*** These are the background images that take up
+ *	an entire screen (or page).
+ */
+.page_img {
+	position: relative;
+	background-color: black;
+	/* Add a background image and scale it to fill */
+/*	background-image: url("images/blackboad-just_chalk03.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;		/* Stretch to fill in both directions */
+
+}
+
+/*************************************
+ *	Specific Sections
+ */
+
+/*** These positions will be modified by the javascript to maintain proportions. */
+#info_box {
+	position: absolute;
+	left: 15px;
+	top: 152px;
+	width: 596px;
+	height: 410px;
+	max-height: 410px;
+	border: 2px solid #80ff80;
+	overflow: auto;	/* Puts in those scrollbars, but only if needed */
+
+	/*** 
+	 *	Special Data--copies of the original position. 
+	 *	Used by the javascript as a reference to the original size. 
+	 */
+	data-left: 15px;
+	data-top: 152px;
+	data-width: 596px;
+	data-height: 410px;
+}

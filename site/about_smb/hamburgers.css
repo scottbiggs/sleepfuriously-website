@@ -1,0 +1,60 @@
+/** CSS file for the Hamburger page ONLY **/
+
+/** This DIV holds my picture et al **/
+#header #self_pic {
+	margin: 0 auto;
+	padding: 3px;
+	width: 580px;	/* width of the image */
+	font-size: 90%;
+	border: 1px solid #a09a9a;
+	border-radius: 8px;
+}
+
+#header #name {
+	position: absolute;
+	width: 5em;
+	top: .5em;
+	left: 50%;
+	z-index: 10;
+	margin-left: 295px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.box ul, .box ol {
+	margin: 0 0 0 3em;
+}
+.box ul li, .box ol li {
+	margin-top: 1em;
+	font-weight: bold;
+}
+.box ul p, .box ol p {
+	margin: 0;
+	font-weight: normal;
+	margin-bottom: .4em;
+}
+
+/* Use this to indicate a frightening thought within a paragraph */
+.shudder {
+	color: #F2279A;
+	font-style: italic;
+	font-size: 80%; 
+	white-space: nowrap;
+}
+.shudder:before {
+	content: "[ ";
+	font-style: normal;
+	white-space: nowrap;
+}
+.shudder:after {
+	content: " ]";
+	font-style: normal;
+	white-space: nowrap;
+}
+
+
+/*************************************
+ *	Popup images
+ */

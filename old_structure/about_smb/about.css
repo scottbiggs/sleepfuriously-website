@@ -1,0 +1,266 @@
+/**
+ * Hopefully, this is a simple CSS that has navigation and a footer, plus an
+ * easy way to insert pictures with the text floating around them.
+ *
+ *	My colors:
+ *		#60b9ce		light blue
+ *		#a3dae7		very light blue
+ *		#8d6dd6		light purple
+ *		#c0f56e		light lime green
+ *
+ */
+
+/*************************************
+ *	Cleaning House
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+html, body {
+	height:100%;
+	width: 100%;
+	background: black;
+	color: #fffafa;		/* Snow is text color */
+	font-family: Century Gothic, sans-serif;
+}
+
+html {
+	overflow-y: scroll;	/* Inhibits horizontal scrollbar */
+}
+
+h1 { font-size: 350%; }
+h2 { font-size: 250%; }
+h3 { font-size: 200%; }
+h4 { font-size: 175%; }
+h5 { font-size: 140%; }
+h6 { font-size: 120%; }
+
+/* Must be in this order */
+a:link {color: #60b9ce; }
+a:visited {color: #8d6dd6; }
+a:hover {color: #c0f56e; }
+a:active {color: #a3dae7; }
+
+
+/*************************************
+ *	General Classes
+ */
+.clear { clear: both; }
+.float_left { float: left; margin-left: .5em; }
+.float_right { float: right; margin-right: .5em; }
+
+
+/***	To organize thoughts	***/
+.box {
+	margin: 5px auto 30px auto;
+	padding: 5px 10px 5px 10px;
+	border: 1px solid #a09a9a;
+	border-radius: 5px;
+	line-height: 1.2;
+	width: 75%;
+}
+.box img {
+	border: 1px solid #fffafa;
+	border-radius: 5px;
+	margin-top: 15px;
+}
+.box h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+}
+.box p {
+	margin: .8em 0 0 0;
+	text-indent: 1.5em;
+}
+.box .biggest {
+	font-size: 200%;
+	margin-bottom: .2em;
+	text-align: center;
+}
+.box .big {
+	font-size: 140%;
+	margin-bottom: .3em;
+	text-align: center;
+}
+.box .medium {
+	font-size: 120%;
+	margin-bottom: .4em;
+	text-align: center;
+}
+
+/** This is useful for seperating mutliple
+	big elements **/
+.box .small {
+	font-size: 100%;
+	text-align: center;
+	margin: 0 auto 8px auto;
+}
+.box .exclamation {
+	font-size: 105%;
+	color: #b0ffd0;
+}
+.box .text {
+	font-size: 100%;
+	margin-bottom: .2em;
+}
+
+/** Used for my signature at the end of blogs	**/
+.box .sign_off {
+	text-align: right;
+	color: #c4cdeb;
+	font-size: 90%;
+}
+
+.unbox {
+	margin: 5px auto 30px auto;
+	padding: 5px 10px 5px 10px;
+	width: 75%;
+}
+.unbox h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+}
+.unbox p {
+	margin: .8em 0 0 0;
+	text-indent: 1.5em;
+}
+.unbox .biggest {
+	font-size: 200%;
+	margin-bottom: .2em;
+	text-align: center;
+}
+.unbox .big {
+	font-size: 140%;
+	margin-bottom: .3em;
+	text-align: center;
+}
+.unbox .small {
+	font-size: 100%;
+	text-align: center;
+	margin: 0 auto 8px auto;
+}
+.unbox .exclamation {
+	font-size: 105%;
+	color: #e0ffe0;
+}
+.unbox .text {
+	font-size: 100%;
+	margin-bottom: .2em;
+}
+
+/*************************************
+ *	Container
+ */
+
+#container {
+	min-height:100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position:relative;
+}
+
+/*************************************
+ *	Header
+ */
+
+#header {
+	margin: 10px auto 20px auto;
+	width: 90%;
+}
+
+
+/*************************************
+ *	Navbar
+ */
+#navbar {
+	clear: both;
+	width: 90%;
+	padding: 0;
+	float: left;
+	margin: 0 5% 1.5em 5%;
+	list-style: none;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	color: #fffafa;
+	background-color: black;
+	font-weight: bold;
+}
+#navbar ul { list-style: none; }
+#navbar li {
+	float: left;
+	margin: 3px;
+}
+#navbar li a {
+	display: block;
+	text-decoration: none;	/* Overides normal link underline */
+	color: #fffafa;		/* snow, overrides normal link colors */
+	border: 1px solid black;	/* to match the border when hovering */
+	padding: 8px 15px;
+}
+#navbar li a:hover {
+	border: 1px solid #fffafa;
+	border-radius: 8px;
+}
+#navbar #selected {
+	text-decoration: overline;
+	display: block;
+	padding: 8px 15px;
+	border: 1px solid black;	/* to match the hover border */
+}
+
+.disabled {
+	display: block;
+	color: #a09898;
+	border: 1px solid black;	/* to match the hover border */
+	padding: 8px 15px;
+}
+
+
+
+/*************************************
+ *	Main
+ */
+
+#main {
+	padding:10px;
+	padding-bottom:70px;	/* Height of the footer */
+	clear: both;
+	margin: 0 auto;
+	width: 60%;
+}
+
+/*************************************
+ *	Footer
+ */
+
+#footer {
+	padding-top: .6em;
+	border-top: 1px solid #fffafa;
+	text-align: center;
+	font-size: 75%;
+	line-height: 120%;
+	font-family: Arial, Helvetica, sans-serif;
+	clear: both;
+
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	height:60px;			/* Height of the footer */
+}

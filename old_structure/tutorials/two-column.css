@@ -1,0 +1,61 @@
+/* An exercise about using CSS to make a two-column
+  web page (with a header and footer) using DIVs.
+*/
+
+/* Not really sure what this does.
+*/
+clear {
+	clear: both;
+}
+
+/* This style is used throughout the whole body--to make sure that everything
+  is centered appropriately, no matter what the resolution.
+*/
+#wrapper {
+	width: 100%;
+}
+
+/* Holds the page content--that is, all the viewable area.
+*/
+#wrapper_inner {
+	width: 100%;
+}
+
+/* The top part of the web page.
+*/
+#header_container {
+	width: 100%;
+	height: 200px;
+	background-color: #d09090;
+}
+
+/* The main portion of our page.
+*/
+#body_container {
+	width: 100%;
+	height: 200px;
+	background-color: #cccccc;
+}
+
+/* The bottom of the web page.
+*/
+#footer_container {
+	width: 100%;
+	height: 200px;
+	color: #e0e0e0;
+	background-color: #666666;
+}
+
+#left_column {
+	width: 395px;
+	height: 400px;
+	float: left;
+	background-color: green;
+}
+
+#right_column {
+	width: 395px;
+	height: 400px;
+	float: right;
+	background-color: orange;
+}

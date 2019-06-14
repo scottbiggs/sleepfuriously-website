@@ -1,0 +1,80 @@
+/* tutorial 9 from http://css.maxdesign.com.au/floatutorial
+
+	Liquid (moves as the screen sizes change) THREE column layout with
+	header and footer.
+
+	This uses 6 divs: container for the whole viewing area, a header, a
+	footer, left and right navigation columns, and the content area.
+
+	Note: this doesn't work as well as I'd like it.  When zooming out, the
+	content area doesn't expand to fill correctly.
+
+*/
+
+#container {
+	width: 90%;
+	margin: 10px auto;
+	background-color: #fff;
+	color: #333;
+	border: 1px solid gray;
+	line-height: 130%;
+}
+
+#top {
+	padding: .5em;
+	background-color: #ddd;
+	border-bottom: 1px solid gray;
+}
+
+#top h1 {
+	padding: 0;
+	margin: 0;
+}
+
+#leftnav {
+	float: left;
+	width: 160px;	/* You can use a percent here instead. */
+	margin: 0;
+	padding: 1em;
+}
+
+/* Very similar to doing the leftnav. */
+#rightnav {
+	float: right;
+	width: 160px;
+	margin: 0;
+	padding: 1em;
+}
+
+/* Most important part: set suitably large margins for the content so that
+  it stays out of the left and right floating areas.
+
+  ALSO: it's important that the content comes AFTER the navigation columns.
+  this keeps the browser from filling up the area too soon. */
+#content {
+	margin-left: 200px;
+	border-left: 1px solid gray;
+	margin-right: 200px;
+	border-right: 1px solid gray;
+	padding: 1em;
+	max-width: 30em;
+}
+
+/* The "clear: both" is critical.  It forces the footer below any floated
+  elements. */
+#footer {
+	clear: both;
+	margin: 0;
+	padding: .5em;
+	color: #333;
+	background-color: #ddd;
+	border-top: 1px solid gray;
+}
+
+#leftnav p, #rightnav p {
+	margin: 0 0 1em 0;
+}
+
+#content h2 {
+	margin: 0 0 .5em 0;
+}

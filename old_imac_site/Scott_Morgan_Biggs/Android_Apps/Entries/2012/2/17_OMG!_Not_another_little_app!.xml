@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<content collectionGUID="0EB8219A-3839-45B0-98C7-5EE285CE6A09">
+  <lastEdited clientType="local-build-20120217" date="2012-02-17 17:09:28 -0600"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;biggs&#x2019; Proximity Info&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Okay, I did it again.  I&#x2019;m publishing another app.  This is actually something that I needed and used and saved some money with.  It&#x2019;s a little program that checks out your phone&#x2019;s hardware and determines if it has a proximity detector or not.  And if it does, it tells you about it.&#xD;&#xD;What&#x2019;s a proximity detector?  Pretty simple, really.  It&#x2019;s special hardware that determines if you are talking on your phone or not.  It usually works by shining a little infrared light.  If it bounces off your ear into a light detector, then it assumes you&#x2019;re talking on your phone.  Otherwise it assumes you&#x2019;re looking at it.  &#xD;&#xD;This is how your phone knows to turn off the screen while you&#x2019;re talking and turn it back on again so you can hang up.&#xD;&#xD;I had a phone that was a real bitch to hang up.  Why?  It seemed as if it didn&#x2019;t know if I was talking or not.  ...some code later, and I noticed that it did &lt;i&gt;not&lt;/i&gt; have one of these detectors.  Unacceptable.  Phone returned, and now I have a &lt;b&gt;much&lt;/b&gt; better phone that I can actually use.&#xD;&#xD;I just uploaded this to the Google Market, so the link hasn&#x2019;t been created yet, sorry.  But for you sly and sexy readers of my blog, you can download it here: &lt;a href="proximity.apk"&gt;proximity.apk&lt;/a&gt;.&#xD;&#xD;Sorry about the long bit with no updates--I&#x2019;ve been busy (hehe).</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Friday, February 17, 2012&lt;/b&gt;</richText>
+  </textBox>
+  <image id="generic-movie-attribute" dynamic="no" visible="yes" src="17_OMG%21_Not_another_little_app%21_files/icon%20512x512%20%28higher%20compression%29.png" left="0px" top="0px" width="300px" height="300px"/>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>OMG!  Not &lt;b&gt;another&lt;/b&gt; little app!</richText>
+  </textBox>
+</content>

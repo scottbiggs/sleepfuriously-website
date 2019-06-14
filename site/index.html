@@ -1,0 +1,263 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!--	head																-->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<head>
+	<meta name="index" content="General index (crossroads) for http://www.sleepfuriously.com" />
+	<title>Sleep Furiously</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="author" content="Scott Morgan Biggs" />
+	<meta name="Copyright" content="Copyright (c) 2017" />
+	<meta name="description" content="Base web page (or the crossroads) for the Sleep Furiously websites (Scott Morgan Biggs)"/>
+	<link rel="shortcut icon" href="images/sfs_favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="portal.css" />
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!--	javascript															-->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<script type="text/javascript">
+
+		//----------------------------------
+		//	Globals
+		//----------------------------------
+
+		// The size of the original crossroads image and map.
+		CROSSROADS_ORIG_WIDTH = 800;
+		CROSSROADS_ORIG_HEIGHT = 600;
+
+		// The coordinates of the original map. These are needed as a 
+		// reference for our proportional calculations.
+		ORIGINAL_MAP_COORDS = null;
+		
+		//----------------------------------
+		//	Helper Functions
+		//----------------------------------
+
+		//----------------------------------
+		// Gets the width of the full viewport (assuming there are
+		// no scrollbars).  Should work for all modern browsers
+		//
+		function get_viewport_width() {
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				width = w.innerWidth || e.clientWidth || g.clientWidth;
+			return width;
+		} // get_viewport_width()
+
+		//----------------------------------
+		// Gets height of the viewport.
+		//
+		function get_viewport_height() {
+			var w = window,
+				d = document,
+				e = d.documentElement,
+				g = d.getElementsByTagName('body')[0],
+				height = w.innerHeight || e.clientHeight|| g.clientHeight;
+			return height;
+		} // get_viewport_height()
+
+
+		//----------------------------
+		//	Sets the width and height of the given image
+		//	to the full size of the viewport.
+		//
+		//	img		The image to modify.
+		//
+		function set_img_full_screen (img) {
+			if (img && img.style) {
+				var height = get_viewport_height() * 0.9;	// Leave 10% for the bottom text.
+				img.style.height = "" + height + "px";
+
+				var width = get_viewport_width();
+				img.style.width = "" + width + "px";
+			}
+			else {
+				alert ("problem with the image!");
+			}
+		} // set_img_full_screen (img)
+
+
+		//----------------------------
+		//	Given a map, scale it to be full-screen, regardless of the
+		//	current screen's size. (I don't do the bottom 10% to leave
+		//	room for a message there.)
+		//
+		//	input:
+		//		map_name		The id name of the map.
+		//
+		//		map_width		The width of the map in pixels
+		//		map_height		Height
+		function set_map_full_screen (map_name, map_width, map_height) {
+			var i, j;
+			var width = get_viewport_width();
+			var height = get_viewport_height() * 0.9;	// Leave room for the bottom
+
+			var width_ratio = width / map_width;
+			var height_ratio = height / map_height;
+
+			// Get the working map
+			var map = document.getElementById (map_name);
+			if (map == null) {
+				alert ("Can't find the map!!!");
+				return;
+			}
+
+			// Grab all the areas and put 'em into an array.
+ 			var map_areas = map.getElementsByTagName('area');
+
+			// Make an array of an array of numbers.  These numbers
+			// are taken from the 'areas' of the map.
+			var coords = new Array();
+			for (i = 0; i < map_areas.length; i++) {
+				// map_areas[i].coords is a string.  Split
+				// each string into an array of integers.
+				coords[i] = map_areas[i].coords.split(',');
+			}
+
+			// Now do the changes.  The first number in
+			// a coords[i] array is the x, the next is
+			// its coorsponding y coordinate.  So go through
+			// each two at a time, modifying as necessary.
+			for (i = 0; i < map_areas.length; i++) {
+				for (j = 0; j < coords[i].length; j += 2) {
+					coords[i][j] = ORIGINAL_MAP_COORDS[i][j] * width_ratio;
+					coords[i][j + 1] = ORIGINAL_MAP_COORDS[i][j + 1] * height_ratio;
+				}
+			}
+
+			// Save the changes.
+			for (i = 0; i < map_areas.length; i++) {
+				map_areas[i].coords = coords[i];
+			}
+
+		} // set_map_full_screen (map_name, map_width, map_height)
+		
+		
+
+		//----------------------------
+		//	This is called whenever the window is resized, which
+		//	is the same thing I do for when it's loaded.
+		//
+		window.onresize = function() {
+			var image = document.getElementById ("crossroads_img");
+			if (image == null) {
+				alert("Can't find the image!!!");
+				return;
+			}
+			set_img_full_screen(image);
+
+			set_map_full_screen("crossroads_map", 
+								CROSSROADS_ORIG_WIDTH, CROSSROADS_ORIG_HEIGHT);
+		}
+		
+
+		//----------------------------
+		//	Overload the onload() function.  This is
+		//	called when the window has finished loading.
+		//
+		//	side effects:
+		//		ORIGINAL_MAP_COORDS will be set.
+		//
+		window.onload = function () {
+
+			// Save the coordinates of our map.  We'll need the originals
+			// when doing our proportional calculations.
+			
+			// Start by getting the map
+			var map = document.getElementById ("crossroads_map");
+			if (map == null) {
+				alert ("Can't find the map!!!");
+				return;
+			}
+
+			// Grab all the areas and put 'em into an array.
+ 			var map_areas = map.getElementsByTagName('area');
+
+			// Make an array of an array of numbers.  These numbers
+			// are taken from the 'areas' of the map.  This array
+			// will be our Global, which will be used for reference
+			// later on.
+			ORIGINAL_MAP_COORDS = new Array();
+			for (i = 0; i < map_areas.length; i++) {
+				// map_areas[i].coords is a string.  Split
+				// each string into an array of integers.
+				ORIGINAL_MAP_COORDS[i] = map_areas[i].coords.split(',');
+			}
+
+			// This does the real work of stretching the image and
+			// map.
+			window.onresize();
+
+		} // window.onload()
+
+
+	</script>
+
+
+</head>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!--	body																-->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<body>
+
+	<!-- The image that's the main part of this screen. -->
+	<img id="crossroads_img"
+		src="images/crossroads color.jpg"
+		usemap="#crossroads_map"
+		alt="crossroads"/>
+
+
+	<!-- The map that describes all the "hot" areas of the image.
+		Note that these numbers are based on a 800x600 pixel image.
+		Those sizes MUST be declared in the javascript constants at
+		the top of this file.
+	-->
+	<map name="crossroads_map" id="crossroads_map">
+		<area shape="poly" href="acting/acting.html" alt="Acting Gym"
+			coords="120,0, 232,0, 408,88, 412,136, 409,172, 120,72, 124,41, 120,20" />
+		<area shape="poly" href="acting/acting.html" alt="Acting Gym"
+			coords="0,599, 0,498, 218,460, 409,526, 237,599" />
+
+		<area shape="poly" href="sfs/sfs.html" alt="Sleep Furiously Films"
+			coords="421,171, 425,129, 417,89, 606,0, 727,0, 729,74"/>
+		<area shape="poly" href="sfs/sfs.html" alt="Sleep Furiously Films"
+			coords="411,526, 593,456, 799,489, 799,599, 595,599"/>
+
+		<area shape="poly" href="about_smb/about.html" alt="About Scott"
+			coords="173,254, 172,211, 315,140, 336,149, 367,155, 407,174, 408,176, 181,246"/>
+		<area shape="poly" href="about_smb/about.html" alt="About Scott"
+			coords="0,380, 0,361, 381,425, 213,460"/>
+
+		<area shape="poly" href="android/android.html" alt="Android Apps"
+			coords="421,177, 421,172, 510,143, 637,208, 638,251"/>
+		<area shape="poly" href="android/android.html" alt="Android Apps"
+			coords="441,422, 799,361, 799,378, 740,397, 728,406, 701,411, 590,455"/>
+
+		<area shape="poly" href="getlost/getlost.html" alt="Get Lost!"
+			coords="432,379, 431,341, 525,343, 525,377"/>
+		<area shape="poly" href="getlost/getlost.html" alt="Get Lost!"
+			coords="491,391, 499,386, 520,386, 526,391, 526,395, 511,398, 490,396"/>
+	</map>
+
+
+	<div id="footer">
+		<div class="well_said">
+			Where you go from here depends on your desires, mood, and luck.
+		</div>
+		<hr />
+		<div class="very_small">
+			Copyright © 2017, Sleep Furiously and Scott M. Biggs. At least give me a bit of
+			credit when you copy this material, okay?
+		</div>
+	</div>
+
+</body>
+</html>

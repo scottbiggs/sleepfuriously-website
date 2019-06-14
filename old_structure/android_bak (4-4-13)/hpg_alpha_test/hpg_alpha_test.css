@@ -1,0 +1,336 @@
+/*
+ * This file and all files on this website are Copyright Scott Morgan Biggs 2012.
+ * Please be nice about using this material.
+ *
+ * The Cascading Style Sheet for the Android web pages.
+ *
+ * Colors used:
+ *
+ *	ivory				#fffff0
+ *	black				#000
+ *	dark_warm_gray		#504848
+ *	darker_gray			#222
+ *
+ *
+ * 	orange				#ff7800
+ *	dark orange			#bf7330
+ *	darker orange		#a64e00
+ *	light orange		#ff9a40
+ *	lighter orange		#ffb573
+ *	cyan				#35c0cd
+ *	light cyan			#5ec4ce
+ *	dark cyan			#028e9b
+ *	darker cyan			#1e6d74
+ *	darkest cyan		#015c65
+ *
+ *	medium light blue	#9bf
+ *
+ */
+
+/*****************************************/
+/*		Clear EVERYTHING				 */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/****************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/****************************************/
+/*	Type Selectors						*/
+/****************************************/
+
+html { overflow-y: scroll; }
+body {
+	font: 100% Helvetica, sans-serif;
+	line-height:1;
+	background-color: #221;
+	color: #fffff0;		/* ivory */
+	font-family: Tahoma,Arial,Helvetica,sans-serif;
+}
+
+p {
+	font: 1.3em/1.3em;	/* defines fontsize and lineheight at same time*/
+	margin-bottom: 1.3em;
+}
+
+h1 { font-size: 350%; line-height: 1; }
+h2 { font-size: 250%; line-height: 1; }
+h3 { font-size: 200%; line-height: 1; }
+h4 { font-size: 175%; line-height: 1; }
+h5 { font-size: 140%; line-height: 1; }
+h6 { font-size: 120%; line-height: 1; }
+
+/* The order of these is rather important */
+
+/*
+a:link { color: blue; }
+a:hover { color: cyan; }
+a:visited { color: purple; }
+a:active {color: yellow; } */	/* when being depressed */
+
+a {
+	text-decoration: none;
+}
+
+/****************************************/
+/*	Class Selectors						*/
+/****************************************/
+
+	/* Some basics */
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+	margin: 1em;
+	margin-right: 0.5em;
+}
+
+.clear {
+	clear: both;
+}
+
+/***************************************/
+/*	Nice Box to organize thoughts	   */
+/***************************************/
+
+.box {
+	margin: 5px 4px 10px 4px;
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: #def;
+	line-height: 120%;
+}
+
+.box img {
+	float:right;
+	width:auto;
+	border: 1px outset #bbb;
+}
+
+.box h1 {
+	margin-bottom: 10px;
+}
+.box h2 {
+	margin-bottom: 9px;
+}
+.box h3 {
+	margin-bottom: 8px;
+}
+.box h4 {
+	margin-bottom: 8px;
+}
+.box h5 {
+	margin-bottom: 8px;
+}
+.box h6 {
+	margin-bottom: 7px;
+}
+
+
+/****************************************/
+/*	Each BUG will be encased in this	*/
+/****************************************/
+.bug {
+	margin: 10px 2px 10px 2px;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
+	background-color: #fee;
+	border: 1px solid black;
+}
+
+.bug .date {
+	text-align: right;
+	color: black;
+}
+
+.bug .name {
+	margin-left: 10px;
+}
+
+.bug .number {
+	float: right;
+}
+
+/****************************************/
+/* Each Feature will be encased in this */
+/****************************************/
+
+.feature {
+	margin: 10px 2px 10px 2px;
+	padding: 2px 5px 2px 5px;
+	border-radius: 5px;
+	background-color: #efe;
+	border: 1px solid black;
+}
+.feature .date {
+	text-align: right;
+	color: black;
+}
+
+.feature .name {
+	margin-left: 10px;
+}
+.feature .number {
+	float: right;
+}
+
+/****************************************/
+/*	ID Selectors						*/
+/****************************************/
+
+
+/* ----- container ----- */
+/* Defines the entire display area.  Everything on this page is displayed
+  within "container." */
+#container {
+	width: 92%;			/* Fill 90% of the width of the viewport. */
+	margin: 2% auto;	/* 10 pixel margin at top and bottom, and "auto"
+						  makes sure that left and right are centered. */
+/*	background-color: #d8d3d3; */
+	background-color: #ccc;
+	color: #223;
+
+/*	border: 2px solid #bf7330;	/* Orange border */
+
+}
+
+
+
+/* ------------------------------------ */
+/* header								*/
+/* ------------------------------------ */
+#header {
+	min-height: 160px;
+	font-family: monospace;
+	margin: 0;
+	padding: 0;
+	padding-right: 10%;
+	color: #106;
+	background-color: #dde;
+	border: 1px solid #222;	/* Prevents banding. */
+
+	text-align: right;
+
+}
+#header h1 {
+	line-height: 1em;
+}
+#header h3 {
+	line-height: 1em;
+}
+
+#header img {
+	float:left;
+	width:auto;
+	height: 150px;
+	margin:5px;
+}
+
+
+
+/* ----- main ----- */
+#main {
+	margin-left: 40%;	/* width of navigation + all the margins and padding of higher level containers. */
+	border-left: 1px solid gray;
+	padding: 1.3em;
+	background-color: #eee;
+	height: 100%;
+	overflow: auto;		/* makes this container expand to include any child elements */
+}
+#main h2 {
+	line-height: 1.8em;
+	margin-bottom: .9em;
+}
+
+#main h5 { margin: 1em 2em 1em 2em; }
+
+
+#main p {
+	margin-bottom: 1em;
+	columns: auto 15em;
+	-moz-columns: auto 15em;
+	-webkit-columns: auto 15em;
+}
+#main ul {
+	margin: 0 0 1.5em 2.5em;
+	list-style-type: disc;
+	list-style-position: outside;
+	font-size: 110%;
+}
+#main ul li {
+	margin: 0 0 .5em 0;
+}
+
+.ul_header {
+	margin-bottom: .5em;
+}
+
+/* ----- left_column ----- */
+#left_column {
+	float: left;
+	width: 30%;		/* This makes the width consistent over zooms. */
+	margin: 0;		/* Turn off any auto-margins. */
+	padding-top: 1em;	/* Give a little space for readability. */
+	padding-left: .7em;
+}
+
+
+/* ----- footer ----- */
+#footer {
+	border-top: 1px solid black;
+	text-align: center;
+	font-size: 90%;
+	line-height: 120%;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: .6em 2em;
+	clear: both;
+}
+

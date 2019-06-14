@@ -1,0 +1,65 @@
+/**
+  * The main css style sheet for my website.
+  *
+  */
+
+body {
+  margin : 0;
+  padding : 0;
+  border-color : #cc0000;
+  color : #d0d0d0;
+  background : #000000 url('images/black_gray_gradient_150.png') repeat-x left top;
+}
+
+p, ul, ol, li {
+  font : 10pt Arial,geneva,helvetica;
+}
+
+h1 {
+  font : bold 20pt Arial, Helvetica, geneva;
+}
+
+
+
+h2 {
+  font : bold 12pt Arial, Helvetica, geneva;
+}
+
+#my_header {
+  margin : 10px;
+  color : #ffffff;
+  padding : 3px;
+}
+
+#leftnavigation {
+  position : absolute;
+  left : 0;
+  top : 0;
+  width : 150px;
+  margin-left : 10px;
+  margin-top : 20px;
+  color : #a0e0e0;
+  padding : 3px;
+}
+
+#rightnavigation {
+  position : absolute;
+  left : 80%;
+  top : 20px;
+  width : 140px;
+  padding-left : 10px;
+  z-index : 3;
+  color : #e0a0e0;
+  padding : 3px;
+}
+
+#content {
+  top : 0px;
+  margin : 0px 25% 0 165px;
+  padding : 3px;
+  color : #d0d0d0;
+}
+
+#content h1, #content h2 {
+  color : #cc0000;
+}

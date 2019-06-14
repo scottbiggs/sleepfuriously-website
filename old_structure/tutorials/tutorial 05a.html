@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!-- This is tutorial 5 from http://css.maxdesign.com.au/floatutorial
+
+  This version, I'm trying to do the same thing, but in what I think is a
+  much more straight-forward manner.  No lists.  Why did they choose lists
+  anyway?
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Tutorial 05a</title>
+	<link href="tutorial 05a.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+	<p>
+		Just like tutorial 5, except withOUT the lists.
+		This is a more general
+		solution.
+	</p>
+<!--		Old way, one class per div
+	<div class="my_block">
+		<div class="my_hover">
+			<a href="#" class="left">Back</a>
+		</div>
+		<div class="my_hover">
+			<a href="#" class="right">Next</a>
+		</div>
+	</div>
+-->
+	<!-- Combining classes in one div statement. -->
+	<div class="my_block my_hover">
+		<a href="#" class="left">Back</a>
+		<a href="#" class="right">Next</a>
+	</div>
+
+
+	<p>
+		And here is some text BELOW (I hope).
+	</p>
+
+</body>
+
+</html>
